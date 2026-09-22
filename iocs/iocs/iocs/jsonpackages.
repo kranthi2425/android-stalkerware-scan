@@ -1,0 +1,1844 @@
+{
+  "application_families": 131,
+  "license_note": "Upstream IOC data; see source repository for terms and updates.",
+  "packages": {
+    "Aktualizacja.apps": [
+      "Spyone"
+    ],
+    "YWZiZDFjZTg2NTZlOGI4NDkyYWJjZDJjZDE5ZTM0Mjk.MzkwMmNhZGFiZGZhMjMyZjQzNTJkYmQ1ODg1ZjI1NzA": [
+      "Observer"
+    ],
+    "a.tck.lvmchi": [
+      "MobileTrackerFree"
+    ],
+    "afs.hbmoczc": [
+      "AndroidPolice"
+    ],
+    "ahmyth.mine.king.ahmyth": [
+      "Ahmyth"
+    ],
+    "and.GuardTrial": [
+      "MobiStealth"
+    ],
+    "and.LocatorTrial": [
+      "MobiStealth"
+    ],
+    "android.helper.system": [
+      "mSpy"
+    ],
+    "android.sys.process": [
+      "mSpy"
+    ],
+    "apk.keylogger": [
+      "RealtimeSpy"
+    ],
+    "apk.kgl": [
+      "RealtimeSpy"
+    ],
+    "apk.kwoapsnde": [
+      "RealtimeSpy"
+    ],
+    "apk.screenshotrecorder": [
+      "RealtimeSpy"
+    ],
+    "app.EasyLogger": [
+      "EasyLogger"
+    ],
+    "app.Easylogger": [
+      "EasyLogger"
+    ],
+    "app.Elogger": [
+      "EasyLogger"
+    ],
+    "app.childsafetytracker": [
+      "EasyLogger"
+    ],
+    "app.cybrook.trackvieo": [
+      "TrackView"
+    ],
+    "app.cybrook.trackviep": [
+      "TrackView"
+    ],
+    "app.cybrook.trackvieq": [
+      "TrackView"
+    ],
+    "app.cybrook.trackvier": [
+      "TrackView"
+    ],
+    "app.cybrook.trackvies": [
+      "TrackView"
+    ],
+    "app.cybrook.trackviet": [
+      "TrackView"
+    ],
+    "app.cybrook.trackvieu": [
+      "TrackView"
+    ],
+    "app.cybrook.trackviev": [
+      "TrackView"
+    ],
+    "app.cybrook.trackview": [
+      "TrackView"
+    ],
+    "app.cybrook.trackviex": [
+      "TrackView"
+    ],
+    "app.cybrook.trackviey": [
+      "TrackView"
+    ],
+    "app.cybrook.trackviez": [
+      "TrackView"
+    ],
+    "app.cybrook.trustserv": [
+      "TrackView"
+    ],
+    "app.lifecircle": [
+      "TrackView"
+    ],
+    "app.seniorsafety": [
+      "EasyLogger"
+    ],
+    "app.spy24.spy24installer": [
+      "Spy24"
+    ],
+    "app.spy24.systemwifi": [
+      "Spy24"
+    ],
+    "app.trackview": [
+      "TrackView"
+    ],
+    "app.trackview.pro": [
+      "TrackView"
+    ],
+    "br.com.appfornecedor.legal": [
+      "MeuSpy"
+    ],
+    "br.com.cloud.aplicativo": [
+      "MeuSpy"
+    ],
+    "br.com.cloud.backup": [
+      "MeuSpy"
+    ],
+    "br.com.daggers.gameap": [
+      "MeuSpy"
+    ],
+    "br.com.daggers.toshtec": [
+      "MeuSpy"
+    ],
+    "br.com.eaglespy": [
+      "eagleSPY"
+    ],
+    "br.com.galaxys.gameap": [
+      "MeuSpy"
+    ],
+    "br.com.gamelevel.cloudv3": [
+      "MeuSpy"
+    ],
+    "br.com.gamelevel.playstart": [
+      "MeuSpy"
+    ],
+    "br.com.maceda.android.antifurtow": [
+      "AntiFurtoDroid"
+    ],
+    "br.com.monsthers.gameap": [
+      "MeuSpy"
+    ],
+    "br.com.phonecell.cloud1": [
+      "MeuSpy"
+    ],
+    "br.com.phonecell.go5ge": [
+      "MeuSpy"
+    ],
+    "br.com.phonecell.maps": [
+      "MeuSpy"
+    ],
+    "br.com.phonecell.radio": [
+      "MeuSpy"
+    ],
+    "br.com.phonecell.services": [
+      "MeuSpy"
+    ],
+    "br.com.rastreadordenamorado": [
+      "RastreadorDeNamorado"
+    ],
+    "br.com.sistema.aplicativo": [
+      "MeuSpy"
+    ],
+    "bv.vemzye": [
+      "AndroidPolice"
+    ],
+    "city.russ.alltrackercorp": [
+      "AllTracker"
+    ],
+    "city.russ.alltrackerfamily": [
+      "AllTracker"
+    ],
+    "city.russ.alltrackerinstaller": [
+      "AllTracker"
+    ],
+    "cmf0.c3b5bm90zq.patch": [
+      "Hoverwatch"
+    ],
+    "cn.trackview.shentan": [
+      "TrackView"
+    ],
+    "com.AwamiSolution.smartkeylogger": [
+      "SmartKeylogger"
+    ],
+    "com.afreesmstracker.app": [
+      "AppSpy"
+    ],
+    "com.agpstracker.app": [
+      "AppSpy"
+    ],
+    "com.aif.tracksp": [
+      "AiSpyer"
+    ],
+    "com.aisistem.instalao": [
+      "MeuSpy"
+    ],
+    "com.aixlunro.uqfhkagb": [
+      "AndroidPolice"
+    ],
+    "com.aiyi.admin": [
+      "Cocospy"
+    ],
+    "com.ajygpxjy.bnthtjou": [
+      "AndroidPolice"
+    ],
+    "com.alienmanfc6.wheresmyandroid": [
+      "WheresMyDroid"
+    ],
+    "com.amon": [
+      "AndroidPolice"
+    ],
+    "com.androdid.inteernet.aa21111227": [
+      "MobileTrackerFree"
+    ],
+    "com.android.core.mngi": [
+      "Snoopza"
+    ],
+    "com.android.core.mngj": [
+      "Snoopza"
+    ],
+    "com.android.core.mngk": [
+      "Snoopza"
+    ],
+    "com.android.core.mngl": [
+      "Snoopza"
+    ],
+    "com.android.core.mngn": [
+      "Snoopza"
+    ],
+    "com.android.core.mngo": [
+      "Snoopza"
+    ],
+    "com.android.core.mngp": [
+      "Snoopza"
+    ],
+    "com.android.core.mngq": [
+      "Snoopza"
+    ],
+    "com.android.core.mngr": [
+      "Snoopza"
+    ],
+    "com.android.core.mngs": [
+      "Snoopza"
+    ],
+    "com.android.core.mngt": [
+      "Snoopza"
+    ],
+    "com.android.core.mngu": [
+      "Snoopza"
+    ],
+    "com.android.core.mngv": [
+      "Snoopza"
+    ],
+    "com.android.core.mngw": [
+      "Snoopza"
+    ],
+    "com.android.core.mngx": [
+      "Snoopza"
+    ],
+    "com.android.core.mngy": [
+      "Snoopza"
+    ],
+    "com.android.core.mngz": [
+      "Snoopza"
+    ],
+    "com.android.core.mnt": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mnta": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntah": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntb": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntd": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mnte": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntf": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntg": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mnth": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mnti": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntj": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntk": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntl": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntm": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntn": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mnto": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntp": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntq": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntr": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mnts": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntt": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntu": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntv": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntw": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntx": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mnty": [
+      "Hoverwatch"
+    ],
+    "com.android.core.mntz": [
+      "Hoverwatch"
+    ],
+    "com.android.core.monitor": [
+      "Hoverwatch"
+    ],
+    "com.android.core.monitor.debug": [
+      "Hoverwatch"
+    ],
+    "com.android.core.monitor.null": [
+      "Hoverwatch"
+    ],
+    "com.android.core.monitornull": [
+      "Hoverwatch"
+    ],
+    "com.android.fystem.maps": [
+      "AndroidPolice"
+    ],
+    "com.android.innovaspy": [
+      "HelloSpy"
+    ],
+    "com.android.inputmethod.latinmy": [
+      "AndroidPolice"
+    ],
+    "com.android.internet.a20200817": [
+      "iKeyMonitor"
+    ],
+    "com.android.internet.a20210916": [
+      "iKeyMonitor"
+    ],
+    "com.android.internet.a20220729": [
+      "iKeyMonitor"
+    ],
+    "com.android.internet.a20220829": [
+      "iKeyMonitor"
+    ],
+    "com.android.internet.a20220914": [
+      "iKeyMonitor"
+    ],
+    "com.android.keyboardhelper": [
+      "mSpy"
+    ],
+    "com.android.omg": [
+      "TheOneSpy"
+    ],
+    "com.android.phone.dialer": [
+      "FlexiSpy"
+    ],
+    "com.android.preference.help.mole": [
+      "BosSpy"
+    ],
+    "com.android.services": [
+      "TheOneSpy"
+    ],
+    "com.android.settings.app": [
+      "OneSpy"
+    ],
+    "com.android.system.app": [
+      "OneSpy"
+    ],
+    "com.android.system.devicelogs": [
+      "AppMia"
+    ],
+    "com.android.system.maps": [
+      "AndroidPolice"
+    ],
+    "com.android.wifi.tracker": [
+      "Trackji"
+    ],
+    "com.androidlost": [
+      "AndroidLost"
+    ],
+    "com.androidlost.smshandler": [
+      "AndroidLost"
+    ],
+    "com.ant.spymie.keylogger": [
+      "Spymie"
+    ],
+    "com.aphonetracker.app": [
+      "AppSpy"
+    ],
+    "com.app.audiorec": [
+      "TrackMyPhones"
+    ],
+    "com.app.call_rec_hidden": [
+      "TrackMyPhones"
+    ],
+    "com.app.com.app.com.app.aplintal": [
+      "MeuSpy"
+    ],
+    "com.app.insapp2": [
+      "MeuSpy"
+    ],
+    "com.app.keylogger": [
+      "TrackMyPhones"
+    ],
+    "com.app.recorder": [
+      "TrackMyPhones"
+    ],
+    "com.app.remote_control": [
+      "TrackingSmartphone"
+    ],
+    "com.app.spy_call_recorder": [
+      "TrackMyPhones"
+    ],
+    "com.app.videorec": [
+      "TrackMyPhones"
+    ],
+    "com.apps.anti_theft": [
+      "TrackMyPhones"
+    ],
+    "com.apps.rct.CellTrackerActivity": [
+      "TrackMyPhones"
+    ],
+    "com.apspy.app": [
+      "TheTruthSpy"
+    ],
+    "com.as.clipboardmanager": [
+      "RealtimeSpy"
+    ],
+    "com.as.facecapture": [
+      "RealtimeSpy"
+    ],
+    "com.as.gpstracker": [
+      "RealtimeSpy"
+    ],
+    "com.as.keylogger": [
+      "RealtimeSpy"
+    ],
+    "com.as.keylogger2": [
+      "RealtimeSpy"
+    ],
+    "com.as.klogger": [
+      "RealtimeSpy"
+    ],
+    "com.as.screenrecorder": [
+      "RealtimeSpy"
+    ],
+    "com.as.urllogger": [
+      "RealtimeSpy"
+    ],
+    "com.ass.antitheft": [
+      "AbsoluTrack"
+    ],
+    "com.ass.ladieschildprotection": [
+      "AbsoluTrack"
+    ],
+    "com.ass.remotesecurity": [
+      "AbsoluTrack"
+    ],
+    "com.at.wwka": [
+      "AndroidPolice"
+    ],
+    "com.ati.client": [
+      "AndroidPolice"
+    ],
+    "com.ati.monitor": [
+      "AndroidPolice"
+    ],
+    "com.ati.webwatcherconsole": [
+      "AndroidPolice"
+    ],
+    "com.atinc.slcompanion": [
+      "AndroidPolice"
+    ],
+    "com.atiw.wc": [
+      "AndroidPolice"
+    ],
+    "com.atracker.app": [
+      "AppSpy"
+    ],
+    "com.autoforward.monitor": [
+      "HighsterMobile"
+    ],
+    "com.avi.scbase": [
+      "pcTattletale"
+    ],
+    "com.awarenesstech.monitor": [
+      "AndroidPolice"
+    ],
+    "com.awarenesstech.wwpapp": [
+      "AndroidPolice"
+    ],
+    "com.awarenesstechnologies.sideloadedws": [
+      "AndroidPolice"
+    ],
+    "com.awti.slc": [
+      "AndroidPolice"
+    ],
+    "com.backup.tt": [
+      "RealtimeSpy"
+    ],
+    "com.bettertomorrowapps.spyyourlovefree": [
+      "CouplerTracker"
+    ],
+    "com.bnahrrbc.kwexsnhl": [
+      "AndroidPolice"
+    ],
+    "com.brot.storage.work": [
+      "Reptilicus"
+    ],
+    "com.bul.b": [
+      "AndroidPolice"
+    ],
+    "com.bulgakov.bug": [
+      "AndroidPolice"
+    ],
+    "com.bulgakov.controlphone": [
+      "AndroidPolice"
+    ],
+    "com.bytepioneers.coupletracker": [
+      "CouplerTracker"
+    ],
+    "com.bzbqbkya.hgozttiu": [
+      "AndroidPolice"
+    ],
+    "com.callhist.calltr": [
+      "AndroidPolice"
+    ],
+    "com.catrsy.jaluc": [
+      "AndroidPolice"
+    ],
+    "com.cellph.montrb": [
+      "AndroidPolice"
+    ],
+    "com.chaoqi.spyapp": [
+      "AndroidPolice"
+    ],
+    "com.cldprotect": [
+      "SpyHuman"
+    ],
+    "com.client.requestlogs": [
+      "ShadowSpy"
+    ],
+    "com.cocospy": [
+      "Cocospy"
+    ],
+    "com.connection.manager": [
+      "Mrecorder"
+    ],
+    "com.cryzp.leplluln": [
+      "AndroidPolice"
+    ],
+    "com.cycle.start.mess": [
+      "Reptilicus"
+    ],
+    "com.dbzbpr.skt": [
+      "AndroidPolice"
+    ],
+    "com.ddiutilities.monitor": [
+      "HighsterMobile"
+    ],
+    "com.dev4playapps.whatsdeleted": [
+      "TrackMyPhones"
+    ],
+    "com.devspark.securityotp": [
+      "SpySMS"
+    ],
+    "com.droidwatcher": [
+      "DroidWatcher"
+    ],
+    "com.dromon": [
+      "AndroidPolice"
+    ],
+    "com.duiyun.cocospy": [
+      "Cocospy"
+    ],
+    "com.duiyun.cocospy.v2": [
+      "Cocospy"
+    ],
+    "com.duiyun.fonemonitor": [
+      "Cocospy"
+    ],
+    "com.duiyun.spyic": [
+      "Cocospy"
+    ],
+    "com.duiyun.spyine": [
+      "Cocospy"
+    ],
+    "com.duiyun.spyzie": [
+      "Cocospy"
+    ],
+    "com.dy.spyzie.v4": [
+      "Cocospy"
+    ],
+    "com.elpatr.woac": [
+      "AndroidPolice"
+    ],
+    "com.epasufob.kybavfgt": [
+      "Spyone"
+    ],
+    "com.epbzrqcg.syzzkuqx": [
+      "Spyone"
+    ],
+    "com.ernell.thht": [
+      "AndroidPolice"
+    ],
+    "com.example.ghazi.sms": [
+      "SpyAppGhazi"
+    ],
+    "com.example.hellospy": [
+      "HelloSpy"
+    ],
+    "com.example.lovespy.app": [
+      "LoveSpy"
+    ],
+    "com.example.openanotherapp": [
+      "Spy24"
+    ],
+    "com.example.reverseshell2": [
+      "AndroRat"
+    ],
+    "com.example.wosc.androidclient": [
+      "CatWatchful"
+    ],
+    "com.eyezy.android": [
+      "mSpy"
+    ],
+    "com.eytewqrm.wvdkgmrl": [
+      "Spyone"
+    ],
+    "com.fbhpdsej.gnuebduy": [
+      "AndroidPolice"
+    ],
+    "com.femimesusu.libapasopi": [
+      "SpyApp"
+    ],
+    "com.fenced.ai": [
+      "Fenced"
+    ],
+    "com.fhekpqbq.otlzonjx": [
+      "AndroidPolice"
+    ],
+    "com.fone": [
+      "TheTruthSpy"
+    ],
+    "com.fp.backup": [
+      "FlexiSpy"
+    ],
+    "com.fzvsdrtb.qamlhxri": [
+      "BrunoEspiao"
+    ],
+    "com.gcm_call_sms_tracker": [
+      "TrackMyPhones"
+    ],
+    "com.gcm_call_sms_tracker.updated": [
+      "TrackMyPhones",
+      "CallSMSTracker"
+    ],
+    "com.gcm_call_tracker": [
+      "TrackMyPhones"
+    ],
+    "com.gcm_celltracker": [
+      "TrackMyPhones"
+    ],
+    "com.get.mtf": [
+      "MobileTrackerFree"
+    ],
+    "com.gh.ob": [
+      "AndroidPolice"
+    ],
+    "com.github.muneebwanee.dash": [
+      "Dash"
+    ],
+    "com.gizmoquip.smstracker": [
+      "CallSMSTracker"
+    ],
+    "com.google.android.bacfup": [
+      "AndroidPolice"
+    ],
+    "com.google.android.network": [
+      "Buhsam"
+    ],
+    "com.google.android.safe": [
+      "AndroidPolice"
+    ],
+    "com.googleplay.settings": [
+      "NetSpy"
+    ],
+    "com.googlesettings.setting": [
+      "HelloSpy"
+    ],
+    "com.greatdata": [
+      "AndroidPolice"
+    ],
+    "com.gss.whereismyphone": [
+      "AbsoluTrack"
+    ],
+    "com.guest": [
+      "TheTruthSpy"
+    ],
+    "com.gzomoyig.qwgawtaz": [
+      "AndroidPolice"
+    ],
+    "com.hellospy": [
+      "HelloSpy"
+    ],
+    "com.hellospy.system": [
+      "HelloSpy"
+    ],
+    "com.hp.vc": [
+      "FreeAndroidSpy"
+    ],
+    "com.hp.vd": [
+      "FreeAndroidSpy"
+    ],
+    "com.hyadesinc.curiosus": [
+      "Curiosus"
+    ],
+    "com.ibm.fb": [
+      "AndroidMonitor"
+    ],
+    "com.igyluazm.iytdhsky": [
+      "AndroidPolice"
+    ],
+    "com.imonitor.ainfo": [
+      "iMonitorSpy"
+    ],
+    "com.ispyoo": [
+      "TheTruthSpy"
+    ],
+    "com.ispyoo.traceyou": [
+      "TheTruthSpy"
+    ],
+    "com.itqredn8dzrl": [
+      "SpyLive360"
+    ],
+    "com.jgeuhcex.ejcxndak": [
+      "Spyone"
+    ],
+    "com.juzyuwqt.thxxnjvf": [
+      "Spyone"
+    ],
+    "com.jyotin.ct": [
+      "MobileTrackerFree"
+    ],
+    "com.kfhdha.fkjfgjdi": [
+      "EspiaoAndroid"
+    ],
+    "com.kids.pro": [
+      "ClevGuard"
+    ],
+    "com.kids.whatsapp": [
+      "ClevGuard"
+    ],
+    "com.kidsmobmon": [
+      "AndroidPolice"
+    ],
+    "com.laucass.androsmscontrol": [
+      "Spyone"
+    ],
+    "com.laucass.phonecontrolenabler": [
+      "Spyone"
+    ],
+    "com.laucass.phonecontroltarget": [
+      "Spyone"
+    ],
+    "com.local_cell_tracker": [
+      "TrackMyPhones"
+    ],
+    "com.local_cell_tracker_updated": [
+      "TrackMyPhones"
+    ],
+    "com.lrvciyti.unrxnfig": [
+      "MobileTrackerFree"
+    ],
+    "com.lsdroid.cerberus": [
+      "Cerberus"
+    ],
+    "com.lsdroid.cerberus.client": [
+      "Cerberus"
+    ],
+    "com.lsdroid.cerberus.enterprise": [
+      "Cerberus"
+    ],
+    "com.lsdroid.cerberus.kids": [
+      "Cerberus"
+    ],
+    "com.lsdroid.cerberus.persona": [
+      "Cerberus"
+    ],
+    "com.lsdroid.cerberus.persona2": [
+      "Cerberus"
+    ],
+    "com.lsdroid.cerberuss": [
+      "Cerberus"
+    ],
+    "com.lsdroid.lsp": [
+      "Cerberus"
+    ],
+    "com.m.service.control": [
+      "MobileTrackerFree"
+    ],
+    "com.mango.findmyphone": [
+      "AndroidPolice"
+    ],
+    "com.mango.findmyphone2": [
+      "AndroidPolice"
+    ],
+    "com.mango.findmyphone3": [
+      "AndroidPolice"
+    ],
+    "com.map.system": [
+      "XNSpy"
+    ],
+    "com.maxxspy": [
+      "HelloSpy"
+    ],
+    "com.maxxspy.system": [
+      "HelloSpy"
+    ],
+    "com.metasploit.stage": [
+      "Metasploit"
+    ],
+    "com.meuspy": [
+      "MeuSpy"
+    ],
+    "com.minspy.v2": [
+      "Cocospy"
+    ],
+    "com.minspy.v3": [
+      "Cocospy"
+    ],
+    "com.mit.networkadapter": [
+      "VIPTrack"
+    ],
+    "com.mit.viptrackpro": [
+      "VIPTrack"
+    ],
+    "com.mnwkvijy.wzyxgrft": [
+      "AndroidPolice"
+    ],
+    "com.mob.service.control": [
+      "MobileTrackerFree"
+    ],
+    "com.mobiispy": [
+      "HelloSpy"
+    ],
+    "com.mobiispy.system": [
+      "HelloSpy"
+    ],
+    "com.mobile.asgard": [
+      "GPSTrackerLoki"
+    ],
+    "com.mobile.gps": [
+      "MobileTrackerFree"
+    ],
+    "com.mobile.loc": [
+      "MobileTrackerFree"
+    ],
+    "com.mobile.loki": [
+      "GPSTrackerLoki"
+    ],
+    "com.mobilefindfree": [
+      "AppSpy"
+    ],
+    "com.mobileservice.sync": [
+      "Mrecorder"
+    ],
+    "com.mobileservices2.synchronization": [
+      "Mrecorder"
+    ],
+    "com.mobilespy.io": [
+      "Fenced"
+    ],
+    "com.mobiletracker": [
+      "MobileTrackerFree"
+    ],
+    "com.mobiletrackerfree.secondapp": [
+      "MobileTrackerFree"
+    ],
+    "com.mobiletrackerfree.www": [
+      "MobileTrackerFree"
+    ],
+    "com.mobitra.todv": [
+      "AndroidPolice"
+    ],
+    "com.mobphn.monit": [
+      "AndroidPolice"
+    ],
+    "com.mobtr.danbel": [
+      "AndroidPolice"
+    ],
+    "com.monitor.phone.s0ft.phonemonitor": [
+      "PhoneMonitor"
+    ],
+    "com.monitorchecker": [
+      "AndroidPolice"
+    ],
+    "com.monspap.alarm": [
+      "EasyPhoneTrack"
+    ],
+    "com.mophtr.td": [
+      "AndroidPolice"
+    ],
+    "com.moxlndmp.uhzhgzjh": [
+      "BrunoEspiao"
+    ],
+    "com.mrblue.setting": [
+      "HelloSpy"
+    ],
+    "com.mrbluetooth.setting": [
+      "HelloSpy"
+    ],
+    "com.mrecorder.callrecorder": [
+      "Mrecorder"
+    ],
+    "com.mrtred.setred": [
+      "HelloSpy"
+    ],
+    "com.mspy.lite": [
+      "mSpy"
+    ],
+    "com.mtf.d": [
+      "MobileTrackerFree"
+    ],
+    "com.mtf.download": [
+      "MobileTrackerFree"
+    ],
+    "com.mxspy": [
+      "TheTruthSpy"
+    ],
+    "com.my.spy.app": [
+      "MySpyApps"
+    ],
+    "com.myappspqwddeexo": [
+      "SpyHuman"
+    ],
+    "com.netowrk.service": [
+      "MobileTrackerFree"
+    ],
+    "com.nhevvtmt.thinkquo": [
+      "BrunoEspiao"
+    ],
+    "com.nsmon.guard": [
+      "NeoSpy"
+    ],
+    "com.ntckdlhc.oifhnjwp": [
+      "AndroidPolice"
+    ],
+    "com.ots.antitheft": [
+      "AbsoluTrack"
+    ],
+    "com.ots.ladieschildprotection": [
+      "AbsoluTrack"
+    ],
+    "com.ots.remotesecurity": [
+      "AbsoluTrack"
+    ],
+    "com.ots.womenchildsafety": [
+      "AbsoluTrack"
+    ],
+    "com.ownspy.android": [
+      "OwnSpy"
+    ],
+    "com.panspy.android": [
+      "PanSpy"
+    ],
+    "com.phone.tracker.smsb": [
+      "AndroidPolice"
+    ],
+    "com.phonespector.app": [
+      "HighsterMobile"
+    ],
+    "com.phonetrackerofficial": [
+      "SpyphoneMobileTracker"
+    ],
+    "com.phonetrackerofficial1": [
+      "SpyphoneMobileTracker"
+    ],
+    "com.phtranlo.tifach": [
+      "AndroidPolice"
+    ],
+    "com.play.services": [
+      "uMobix"
+    ],
+    "com.popo.analyse": [
+      "PhoneSpy"
+    ],
+    "com.prophoto.editor": [
+      "HelloSpy"
+    ],
+    "com.protect": [
+      "AndroidPolice"
+    ],
+    "com.protect.download": [
+      "MobileTrackerFree"
+    ],
+    "com.psac.a.processservice": [
+      "MobiSpy"
+    ],
+    "com.pser.sysutils": [
+      "AndroidPolice"
+    ],
+    "com.pt.bark": [
+      "bark"
+    ],
+    "com.pvojpamt.tzzyqjyb": [
+      "PhoneMonitor"
+    ],
+    "com.qwertyuiop.asdfghjkl": [
+      "OneSpy"
+    ],
+    "com.qzogle.android.jacfut": [
+      "AndroidPolice"
+    ],
+    "com.qzogle.xndroid.jacfup": [
+      "AndroidPolice"
+    ],
+    "com.qzogle.xndroid.jacfut": [
+      "AndroidPolice"
+    ],
+    "com.rana_aditya.child": [
+      "Spyzier"
+    ],
+    "com.realtime.spyapp": [
+      "RealtimeSpy"
+    ],
+    "com.remote.app": [
+      "XploitSPY"
+    ],
+    "com.rephko.stha": [
+      "AndroidPolice"
+    ],
+    "com.retina.phonesheriff": [
+      "PhoneSheriff"
+    ],
+    "com.retina21.ms41": [
+      "PhoneSheriff"
+    ],
+    "com.retina22.ms6": [
+      "PhoneSheriff"
+    ],
+    "com.retinasoft.ephonetracker": [
+      "PhoneSheriff"
+    ],
+    "com.rspl15.nanny.android": [
+      "PhoneSheriff"
+    ],
+    "com.rspl16.nanny.android": [
+      "PhoneSheriff"
+    ],
+    "com.rspl17.nanny.android": [
+      "PhoneSheriff"
+    ],
+    "com.rspl18.nanny.android": [
+      "PhoneSheriff"
+    ],
+    "com.rspl19.nanny.android": [
+      "PhoneSheriff"
+    ],
+    "com.rspl20.nanny.android": [
+      "PhoneSheriff"
+    ],
+    "com.rspl21.nanny.android": [
+      "PhoneSheriff"
+    ],
+    "com.rspl22.retinaspy": [
+      "PhoneSheriff"
+    ],
+    "com.runaki.synclogs": [
+      "ShadowSpy"
+    ],
+    "com.s2m": [
+      "AndroidPolice"
+    ],
+    "com.s2m.seas": [
+      "AndroidPolice"
+    ],
+    "com.sa.app": [
+      "SpyAdvice"
+    ],
+    "com.safesecureservice": [
+      "SpyHuman"
+    ],
+    "com.saloomughal.spyapp": [
+      "BlurSpy"
+    ],
+    "com.sap4mobile": [
+      "AndroidPolice"
+    ],
+    "com.saxfamqvxj": [
+      "SpyHuman"
+    ],
+    "com.sc.cocospy.v2": [
+      "Cocospy"
+    ],
+    "com.sc.fonemonitor": [
+      "Cocospy"
+    ],
+    "com.sc.fonemonitor.v2": [
+      "Cocospy"
+    ],
+    "com.sc.minspy.v2": [
+      "Cocospy"
+    ],
+    "com.sc.neatspy.v2": [
+      "Cocospy"
+    ],
+    "com.sc.safespy.v2": [
+      "Cocospy"
+    ],
+    "com.sc.safespy.v3": [
+      "Cocospy"
+    ],
+    "com.sc.spyic.v2": [
+      "Cocospy"
+    ],
+    "com.sc.spyic.v3": [
+      "Cocospy"
+    ],
+    "com.sc.spyier.v2": [
+      "Cocospy",
+      "Spyier"
+    ],
+    "com.sc.spyine.v2": [
+      "Cocospy"
+    ],
+    "com.sc.spyzie.v2": [
+      "Cocospy"
+    ],
+    "com.sc.teensafe.v2": [
+      "Cocospy"
+    ],
+    "com.screentime": [
+      "AndroidPolice"
+    ],
+    "com.sec.android.internet.im.service.im20190118": [
+      "iKeyMonitor"
+    ],
+    "com.sec.android.internet.im.service.im20190419": [
+      "iKeyMonitor"
+    ],
+    "com.sec.android.internet.im.service.im20210815": [
+      "iKeyMonitor"
+    ],
+    "com.sec.provider.mobile.android": [
+      "MonitorUltra"
+    ],
+    "com.selgdg.febgdsra": [
+      "AndroidPolice"
+    ],
+    "com.selgdg.mardsdaf": [
+      "AndroidPolice"
+    ],
+    "com.semantic.childcontrol": [
+      "SpyMasterPro"
+    ],
+    "com.sepfsp.jasend": [
+      "AndroidPolice"
+    ],
+    "com.service.mug": [
+      "SpyMug"
+    ],
+    "com.services.phone": [
+      "MobileTrackerFree"
+    ],
+    "com.sev.android.systemdev": [
+      "AndroidPolice"
+    ],
+    "com.shadow.client.android": [
+      "ShadowSpy"
+    ],
+    "com.shadyspy.monitor": [
+      "ShadySpy"
+    ],
+    "com.sl360": [
+      "SpyLive360"
+    ],
+    "com.smart": [
+      "AndroidPolice"
+    ],
+    "com.smart.guardoffline": [
+      "AbsoluTrack"
+    ],
+    "com.smartback": [
+      "AndroidPolice"
+    ],
+    "com.smstra.xanris": [
+      "AndroidPolice"
+    ],
+    "com.snapch.monabcab": [
+      "EasyPhoneTrack"
+    ],
+    "com.snapchat.trmonap": [
+      "EasyPhoneTrack"
+    ],
+    "com.softalogy.thiefguard": [
+      "AbsoluTrack"
+    ],
+    "com.soh": [
+      "TrackMyPhones"
+    ],
+    "com.spappm_mondow.alarm": [
+      "EasyPhoneTrack",
+      "SpyPhoneApp"
+    ],
+    "com.spapptrakapp.alarm": [
+      "SpyPhoneApp"
+    ],
+    "com.spatrakappp.alarm": [
+      "SpyPhoneApp"
+    ],
+    "com.spy2mobile": [
+      "AndroidPolice"
+    ],
+    "com.spy2mobile.light": [
+      "AndroidPolice"
+    ],
+    "com.spyapp247.system": [
+      "SpyApp247"
+    ],
+    "com.spyhumanrev": [
+      "SpyHuman"
+    ],
+    "com.spyic": [
+      "Cocospy"
+    ],
+    "com.spynote.software.stubspynote": [
+      "SpyNote"
+    ],
+    "com.spytoapp.system": [
+      "SpyToApp"
+    ],
+    "com.spyzee": [
+      "TheTruthSpy"
+    ],
+    "com.ssurebrec": [
+      "Cerberus"
+    ],
+    "com.stmrsa.htxt": [
+      "AndroidPolice"
+    ],
+    "com.surebrec": [
+      "Cerberus"
+    ],
+    "com.system.settings": [
+      "Observer"
+    ],
+    "com.system.task": [
+      "XNSpy"
+    ],
+    "com.system.user": [
+      "uMobix"
+    ],
+    "com.systemservice": [
+      "TheTruthSpy"
+    ],
+    "com.tag.viptrack": [
+      "VIPTrack"
+    ],
+    "com.tbntxear.vfmkjxme": [
+      "AndroidPolice"
+    ],
+    "com.tccplos.spth": [
+      "AndroidPolice"
+    ],
+    "com.telephony.android": [
+      "FlexiSpy"
+    ],
+    "com.tevi.walpi": [
+      "AndroidPolice"
+    ],
+    "com.thaxygpc.xjsjobpn": [
+      "BrunoEspiao"
+    ],
+    "com.thecybernanny.andapp": [
+      "Reptilicus"
+    ],
+    "com.thetruth": [
+      "TheTruthSpy"
+    ],
+    "com.thewispy": [
+      "TheWiSpy"
+    ],
+    "com.tools.secretcamcorder": [
+      "SecretCamRecorder"
+    ],
+    "com.topspy": [
+      "HelloSpy"
+    ],
+    "com.topspy.system": [
+      "HelloSpy"
+    ],
+    "com.tracker.sms.mobile": [
+      "AndroidPolice"
+    ],
+    "com.trackerapps.whatsaptracker": [
+      "TrackMyPhones"
+    ],
+    "com.tracking_smartphone": [
+      "TrackingSmartphone"
+    ],
+    "com.trackmyphone_pro": [
+      "TrackMyPhones"
+    ],
+    "com.trackmyphones.livefamilytracker": [
+      "TrackMyPhones"
+    ],
+    "com.trackmyphones.recoverphoneusingchatmessages": [
+      "TrackMyPhones"
+    ],
+    "com.trackmyphones.tmpusingchatmessages": [
+      "TrackMyPhones"
+    ],
+    "com.trackview": [
+      "TrackView"
+    ],
+    "com.trackzone.kids": [
+      "AndroidPolice"
+    ],
+    "com.trandmon.tool": [
+      "AndroidPolice"
+    ],
+    "com.trphwhat.prob": [
+      "AndroidPolice"
+    ],
+    "com.ts_settings": [
+      "TrackingSmartphone"
+    ],
+    "com.ttsapp.catchcheating": [
+      "TheTruthSpy"
+    ],
+    "com.tuner.funnelwebview": [
+      "uMobix"
+    ],
+    "com.tutorial.instalao": [
+      "MeuSpy"
+    ],
+    "com.udxlbuno.plwnnhop": [
+      "AndroidPolice"
+    ],
+    "com.uxgbipup.pdtvcgzc": [
+      "AndroidPolice"
+    ],
+    "com.uzoifhzk.qmqnpwaf": [
+      "AndroidPolice"
+    ],
+    "com.viewcalls.rem": [
+      "AndroidPolice"
+    ],
+    "com.viewsms.remb": [
+      "AndroidPolice"
+    ],
+    "com.virsys.tracker": [
+      "HelloSpy"
+    ],
+    "com.vvt.android.syncmanager": [
+      "FlexiSpy"
+    ],
+    "com.w0f0": [
+      "SpyLive360"
+    ],
+    "com.w1f1": [
+      "SpyLive360"
+    ],
+    "com.wSpyEra": [
+      "SpyEra"
+    ],
+    "com.wb.production": [
+      "Cocospy"
+    ],
+    "com.whtrack.monit": [
+      "AndroidPolice"
+    ],
+    "com.wifi0": [
+      "SpyLive360"
+    ],
+    "com.wifiset.service": [
+      "HelloSpy"
+    ],
+    "com.wifisettings.service": [
+      "HelloSpy"
+    ],
+    "com.wisemo.host.v10": [
+      "WiseMo"
+    ],
+    "com.wisemo.wsmguest.v18": [
+      "WiseMo"
+    ],
+    "com.wlset.info": [
+      "PhoneSpy"
+    ],
+    "com.ws.sc": [
+      "Cocospy"
+    ],
+    "com.ws.scli": [
+      "Cocospy"
+    ],
+    "com.wtspy.apps": [
+      "WtSpy"
+    ],
+    "com.ww.companion": [
+      "AndroidPolice"
+    ],
+    "com.wwtspy": [
+      "WtSpy"
+    ],
+    "com.wzogle.zndroid.yacfup": [
+      "AndroidPolice"
+    ],
+    "com.xhunter.client": [
+      "xHunter"
+    ],
+    "com.xno.systemservice": [
+      "Xnore"
+    ],
+    "com.xnspy.dashboard": [
+      "XNSpy"
+    ],
+    "com.yurpdpvxnybmlgh": [
+      "SpyHuman"
+    ],
+    "com.zkftwsel.fqnoquuv": [
+      "AndroidPolice"
+    ],
+    "core.framework": [
+      "mSpy"
+    ],
+    "core.update.framework": [
+      "mSpy"
+    ],
+    "cybrook.trackview": [
+      "TrackView"
+    ],
+    "dell.scream.application": [
+      "SpyNote"
+    ],
+    "edu.virginia.cs.cs4720.ispy": [
+      "ISpy"
+    ],
+    "efexmsz.mzuooelftl": [
+      "AndroidPolice"
+    ],
+    "fka.ugsonrqogw": [
+      "AndroidPolice"
+    ],
+    "fod.loqpf": [
+      "AndroidPolice"
+    ],
+    "g.google.llc": [
+      "MobileTrackerFree"
+    ],
+    "googlesettings.setting": [
+      "HelloSpy"
+    ],
+    "ifk.ghumlh": [
+      "AndroidPolice"
+    ],
+    "iiw.orqjtwbkx": [
+      "AndroidPolice"
+    ],
+    "in.servidor.service": [
+      "MeuSpy"
+    ],
+    "in.spyapp.patanjali.android": [
+      "PatanSpyApp"
+    ],
+    "inc.imonitor": [
+      "iMonitorSpy"
+    ],
+    "io.github.vvb2060.packageinstaller.test": [
+      "Msafely"
+    ],
+    "iqual.calculadora.pro": [
+      "SpyMasterPro"
+    ],
+    "ir.spy24.updater": [
+      "Spy24"
+    ],
+    "ir.spy24.wifi": [
+      "Spy24"
+    ],
+    "kenkbltcf.pwpwkvdwmjk": [
+      "AndroidPolice"
+    ],
+    "lookOut.Secure": [
+      "MobiStealth"
+    ],
+    "m.mob.control": [
+      "MobileTrackerFree"
+    ],
+    "m.mob.service2020": [
+      "MobileTrackerFree"
+    ],
+    "m.mobile.control": [
+      "SpyHuman"
+    ],
+    "m.phone.control2020": [
+      "MobileTrackerFree"
+    ],
+    "m.protect.children": [
+      "MobileTrackerFree"
+    ],
+    "m.protect.parental": [
+      "MobileTrackerFree"
+    ],
+    "m.secu.children": [
+      "MobileTrackerFree"
+    ],
+    "m.security.parental": [
+      "MobileTrackerFree"
+    ],
+    "me.hawkshaw": [
+      "AndroidSpyApp"
+    ],
+    "med.mspy.mspy": [
+      "mSpy"
+    ],
+    "mg.locations.track5": [
+      "OneLocator"
+    ],
+    "mhu.bylbcwc": [
+      "AndroidPolice"
+    ],
+    "mob.protect.children": [
+      "MobileTrackerFree"
+    ],
+    "mob.service.parental2020": [
+      "MobileTrackerFree"
+    ],
+    "mobile.controlparental2020": [
+      "MobileTrackerFree"
+    ],
+    "mobile.monitor.child2021": [
+      "MobileTrackerFree"
+    ],
+    "mobile.monitor.child2022": [
+      "MobileTrackerFree"
+    ],
+    "mobile.monitor.child2023": [
+      "MobileTrackerFree"
+    ],
+    "mobile.monitor.child2034": [
+      "MobileTrackerFree"
+    ],
+    "mobile.parental2021": [
+      "MobileTrackerFree"
+    ],
+    "mobile.protect.children": [
+      "MobileTrackerFree"
+    ],
+    "mobile.protect.children2020": [
+      "MobileTrackerFree"
+    ],
+    "net.androidcoreapp.androidbackup": [
+      "Reptilicus"
+    ],
+    "net.cybrook.trackvieo": [
+      "TrackView"
+    ],
+    "net.cybrook.trackviep": [
+      "TrackView"
+    ],
+    "net.cybrook.trackvieq": [
+      "TrackView"
+    ],
+    "net.cybrook.trackvier": [
+      "TrackView"
+    ],
+    "net.cybrook.trackvies": [
+      "TrackView"
+    ],
+    "net.cybrook.trackviet": [
+      "TrackView"
+    ],
+    "net.cybrook.trackvieu": [
+      "TrackView"
+    ],
+    "net.cybrook.trackviev": [
+      "TrackView"
+    ],
+    "net.cybrook.trackview": [
+      "TrackView"
+    ],
+    "net.cybrook.trackviex": [
+      "TrackView"
+    ],
+    "net.cybrook.trackviey": [
+      "TrackView"
+    ],
+    "net.cybrook.trackviez": [
+      "TrackView"
+    ],
+    "net.cybrook.trustserv": [
+      "TrackView"
+    ],
+    "net.delphiboardlayer.androidcoreapp": [
+      "Reptilicus"
+    ],
+    "net.droid.talk218": [
+      "Ahmyth"
+    ],
+    "net.homesafe": [
+      "TrackView"
+    ],
+    "net.kidlogger.kidlogger": [
+      "AndroidPolice"
+    ],
+    "net.majorkernelpanic.spydroid": [
+      "SpyDroid"
+    ],
+    "net.reptilicus.clientapp": [
+      "Reptilicus"
+    ],
+    "net.someapp1.somecorp2": [
+      "AndroidPolice"
+    ],
+    "net.spy24.wifi": [
+      "Spy24"
+    ],
+    "net.system_updater_abs341": [
+      "Reptilicus"
+    ],
+    "net.teslineservice.kidl5": [
+      "AndroidPolice"
+    ],
+    "net.trackview": [
+      "TrackView"
+    ],
+    "net.trackview.pro": [
+      "TrackView"
+    ],
+    "net.vkurhandler": [
+      "Reptilicus"
+    ],
+    "ns.antapp.module": [
+      "NeoSpy"
+    ],
+    "one.enix.smsforward": [
+      "SMSForward"
+    ],
+    "oo.ptkqyawh": [
+      "AndroidPolice"
+    ],
+    "org.alltracker.security": [
+      "AllTracker"
+    ],
+    "org.connecting.updived.hygeist.interplays": [
+      "MobileTool"
+    ],
+    "org.findmykids.app": [
+      "FindMyKids"
+    ],
+    "org.findmykids.child": [
+      "FindMyKids"
+    ],
+    "org.poleward.burghs.hydrotherapy.homonymously": [
+      "MobileTool"
+    ],
+    "org.secure.smsgps": [
+      "HighsterMobile"
+    ],
+    "org.system.kernel": [
+      "OwnSpy"
+    ],
+    "org.traccar.client": [
+      "Traccar"
+    ],
+    "org.traccar.client.hidden": [
+      "Traccar"
+    ],
+    "org.urates.amirates.suffocate.chiliast": [
+      "MobileTool"
+    ],
+    "phone.Secure": [
+      "MobiStealth"
+    ],
+    "pl.lidwin.letmespy": [
+      "LetMeSpy"
+    ],
+    "pl.lidwin.letmespy2": [
+      "LetMeSpy"
+    ],
+    "pl.lidwin.letmespy3": [
+      "LetMeSpy"
+    ],
+    "pl.lidwin.letmespy4": [
+      "LetMeSpy"
+    ],
+    "pl.lidwin.letmespy5": [
+      "LetMeSpy"
+    ],
+    "pl.lidwin.lms": [
+      "LetMeSpy"
+    ],
+    "pl.lidwin.remote": [
+      "LetMeSpy"
+    ],
+    "pl.lidwin.remote1": [
+      "LetMeSpy"
+    ],
+    "pl.lidwin.remote2": [
+      "LetMeSpy"
+    ],
+    "pl.radeal.lms4": [
+      "LetMeSpy"
+    ],
+    "pl.spyone.agent2": [
+      "Spyone"
+    ],
+    "ru.usafe.kid.unisafekids": [
+      "Unisafe"
+    ],
+    "ru.usafe.u_safe": [
+      "Unisafe"
+    ],
+    "ru.usafe.usafe": [
+      "Unisafe"
+    ],
+    "se.vkur.clientapp": [
+      "Reptilicus"
+    ],
+    "seC.fqjx.sqBB": [
+      "OneSpy"
+    ],
+    "security.mobile.parental": [
+      "MobileTrackerFree"
+    ],
+    "service.download.app": [
+      "MobileTrackerFree"
+    ],
+    "stealthLight.sys": [
+      "MobiStealth"
+    ],
+    "su.unisafe.unisafe": [
+      "Unisafe"
+    ],
+    "sy.slvzccd": [
+      "AndroidPolice"
+    ],
+    "system.framework": [
+      "mSpy"
+    ],
+    "t.tools.app": [
+      "TalkLog"
+    ],
+    "tech.logsettings": [
+      "TalkLog"
+    ],
+    "technic.settings": [
+      "TalkLog"
+    ],
+    "tej.flashkeylogger": [
+      "FlashKeylogger"
+    ],
+    "tej.flashkeyloggerpro": [
+      "FlashKeylogger"
+    ],
+    "tej.flashkeylogges": [
+      "FlashKeylogger"
+    ],
+    "tracker.mob.gps": [
+      "MobileTrackerFree"
+    ],
+    "tv.familynk": [
+      "TrackView"
+    ],
+    "tv.familynl": [
+      "TrackView"
+    ],
+    "update.service.android": [
+      "mSpy"
+    ],
+    "update.service.android.installer": [
+      "mSpy"
+    ],
+    "us.trackview": [
+      "TrackView"
+    ],
+    "vmf.uxytqgrl": [
+      "AndroidPolice"
+    ],
+    "vn.ehkfqgvn": [
+      "AndroidPolice"
+    ],
+    "wosc.cwf": [
+      "CatWatchful"
+    ],
+    "wosc.cwf2": [
+      "CatWatchful"
+    ],
+    "xd.spy.app": [
+      "XDSpy"
+    ],
+    "yc.sysupd.client": [
+      "Reptilicus"
+    ],
+    "yogaworkouts.dailyyoga.yogafitness": [
+      "MobileTrackerFree"
+    ],
+    "yr.tubjypbl": [
+      "AndroidPolice"
+    ]
+  },
+  "retrieved": "2026-09-22",
+  "source": "https://github.com/AssoEchap/stalkerware-indicators"
+}
