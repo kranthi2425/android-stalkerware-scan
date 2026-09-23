@@ -119,23 +119,27 @@ IOC lists age quickly. Review upstream changes before a high-stakes examination.
 
 ## iPhone (iOS) backup scan
 
-`ios_scanner.py` is a separate, laptop-based triage module for iPhones. iOS does not allow an on-phone scanner like the Android ADB path, so it reads a local iTunes/Finder backup instead. It uses only the Python 3.9+ standard library (`sqlite3`, `plistlib`), costs nothing, and never writes to the phone or the backup.
+`ios_scanner.py` is a separate, laptop-based triage module for iPhones. iOS does not allow an on-phone scanner like the Android ADB path, so it reads a local iTunes/Finder backup instead. It uses only the Python 3.9+ standard library (`sqlite3`, `plistlib`) for unencrypted backups and filesystem dumps, costs nothing, and never writes to the phone, the backup, or the dump. Encrypted backups need one optional free package (see below).
 
 > [!WARNING]
 > The same safety rule applies: **do not delete profiles or apps, reset the phone, or confront anyone before you have a safety plan.** Making a backup on a computer the suspected abuser can access may also be risky.
 
-### What it checks (Phase 1)
+### What it checks
 
 1. **Jailbreak artifacts.** Classic iPhone stalkerware needs a jailbroken phone. The scanner matches the backup's `Manifest.db` file list and app list against `iocs/ios_jailbreak.json`, a versioned list of jailbreak apps, package managers, permanent sideloaders (TrollStore), and jailbreak file paths compiled for this project from public jailbreak project pages and published detection references. One tool is **HIGH**; traces of two or more separate tools are **CRITICAL**.
 2. **Configuration profiles and MDM enrollment.** Reads installed profile records, `MDM.plist`, and supervision/automated-enrollment records from the configuration-profiles container. Profiles with MDM, VPN, global proxy, root certificate, content-filter, or DNS payloads are **HIGH**; other profiles are **MEDIUM**. Work, school, and carrier profiles are common and legitimate, so the report says so.
 3. **Network IOC sweep.** Matches Echap's public stalkerware network indicators (domains, subdomains, IPv4 addresses, and URLs) against Safari history and SMS/iMessage text in the backup. A match is **CRITICAL**, with dates and direction so the user can tell an install link from their own research.
+4. **Installed apps and dual-use apps.** Lists every app in the backup (report section `APP INVENTORY`, JSON `app_inventory`) and matches bundle IDs against `iocs/ios_dual_use_apps.json`: a versioned, curated list of App Store location-sharing, parental-control, couple-tracker, anti-theft/remote-access, and "phone monitoring" apps. Bundle IDs, names, and developers come from Apple's public iTunes Lookup API (each entry keeps its lookup URL); categories and roles (watched phone, watching phone, both) were assigned from each app's own App Store description. Matches are always **MEDIUM** and labeled by category. They are **not a verdict**: these apps have legitimate uses and are usually installed knowingly ([Chatterjee et al., IEEE S&P 2018](https://nixdell.com/papers/spyware.pdf) found most apps used for partner surveillance are dual-use). Apps whose brand or servers also appear in the Echap indicators are marked with that family.
+5. **Enterprise and provisioning-profile traces.** Reads any `.mobileprovision` file in the source (and, in filesystem-dump mode, each app's `embedded.mobileprovision`) and classifies it as enterprise/in-house (`ProvisionsAllDevices`), ad hoc, or development ([Apple TN3125](https://developer.apple.com/documentation/technotes/tn3125-inside-code-signing-provisioning-profiles)). Enterprise signing lets apps install outside the App Store and has been used to spread iPhone malware ([Unit 42 on WireLurker/provisioning abuse](https://unit42.paloaltonetworks.com/protecting-users-ios-app-provisioning-profile-abuse/)). Alone these are **MEDIUM**; alongside any other finding in the same scan they become **HIGH**. Standard backups usually do not include provisioning profiles, so this check mostly matters with `--fs-dump`.
+
+Every iOS report also includes an **"Escalate to MVT for deep analysis"** section with the exact `mvt-ios` commands for this source ([MVT backup docs](https://docs.mvt.re/en/latest/ios/backup/check/), [filesystem docs](https://docs.mvt.re/en/latest/ios/filesystem/check/)). It is marked recommended when anything HIGH or CRITICAL was found.
 
 Every iOS report also includes the Apple Safety Check / account-hygiene checklist and the "clean scan does not mean clean" caveat, because much iPhone spying (a known Apple Account password, shared accounts, Find My or family sharing, iCloud access) leaves no trace in a backup.
 
 ### Make a backup
 
 1. Connect the iPhone to a Mac (Finder, macOS 10.15+) or a PC (Apple Devices app or iTunes) and choose **Back up all of the data on your iPhone to this computer** ([Apple: back up with the Finder](https://support.apple.com/en-us/108796)).
-2. Phase 1 reads **unencrypted** backups only. Apple backups are not encrypted by default, but if "Encrypt local backup" is on, the scanner will refuse the backup instead of guessing. Apple notes that unencrypted backups can leave out website history, call history, saved passwords, Wi-Fi settings, and Health data ([Apple: encrypted backups](https://support.apple.com/en-us/108353)), so browsing-history coverage may be missing. Encrypted-backup support is planned for Phase 2; until then an examiner can use MVT, which handles encrypted backups.
+2. Encrypted or not both work. Apple notes that unencrypted backups can leave out website history, call history, saved passwords, Wi-Fi settings, and Health data ([Apple: encrypted backups](https://support.apple.com/en-us/108353)), so an **encrypted** backup gives better coverage (MVT recommends it too). You need the backup password set in Finder/iTunes (not the phone passcode).
 3. Find the backup folder ([Apple: locate backups](https://support.apple.com/en-us/108809)):
    - macOS: `~/Library/Application Support/MobileSync/Backup/`
    - Windows: `%USERPROFILE%\Apple\MobileSync\Backup\` or `%APPDATA%\Apple Computer\MobileSync\Backup\`
@@ -146,7 +150,23 @@ Every iOS report also includes the Apple Safety Check / account-hygiene checklis
 python3 ios_scanner.py --backup "~/Library/Application Support/MobileSync/Backup/<DEVICE-ID>"
 ```
 
-If the folder you pass holds exactly one backup, the scanner picks it. The tool writes:
+If the folder you pass holds exactly one backup, the scanner picks it.
+
+**Encrypted backups.** Python's standard library has no AES, so decrypting needs one optional free package. Install either one:
+
+```bash
+pip install cryptography      # or: pip install pycryptodome
+```
+
+The scanner asks for the backup password (typing is hidden), or reads it from `IOS_BACKUP_PASSWORD` (`--password-env` picks another variable). Nothing else changes: unencrypted backups and dumps never import the package. The few files the scan reads are decrypted into a private temporary folder that is deleted when the scan ends; the password and keys are never written to the report. If the backup's `Manifest.db` is already readable (a copy decrypted with another tool), it is scanned as is. Key handling follows the public iOS 10.2+ backup format (PBKDF2 keybag, RFC 3394 key wrap, AES-CBC), as documented by [iphone_backup_decrypt](https://github.com/jsharkey13/iphone_backup_decrypt).
+
+**Full filesystem dump (optional, advanced).**
+
+```bash
+python3 ios_scanner.py --fs-dump /path/to/extracted-dump
+```
+
+Point it at the folder that contains `private/var` (or a dump of `/private` alone). It reads a targeted set of paths: app bundles, provisioning profiles, configuration profiles, Safari history, messages, and jailbreak paths. Getting a dump usually means jailbreaking the phone first ([MVT: dumping the filesystem](https://docs.mvt.re/en/latest/ios/filesystem/dump/)), so jailbreak findings may come from the acquisition itself. This is examiner territory. The tool writes:
 
 - `report_ios.txt` - plain-language triage report, safety warning first
 - `report_ios.json` - structured report with the same severity ladder and top-level shape as `report.json` (`generated_at`, `device`, `package_count`, `findings`, each finding with `score`, `severity`, `reasons`), plus `platform: "ios"`, `checks`, `account_hygiene`, and `clean_scan_caveat`
@@ -157,7 +177,9 @@ The report lists which checks ran and how much data each saw, so "no findings" c
 
 - Standard backups do not contain the system partition, so most jailbreak files show up only as app data, preferences, or leftovers.
 - Network matching covers Safari history and message text in the backup only, not live traffic or third-party apps.
-- Planned for Phase 2: dual-use app inventory matching, enterprise/provisioning-profile traces, encrypted-backup support, and an MVT escalation handoff.
+- Dual-use app matching only knows the curated App Store apps in `iocs/ios_dual_use_apps.json`. Renamed, new, or enterprise-signed apps are missed, and a match is a question to ask, not proof.
+- Encrypted-backup support is tested against synthetic backups built to the documented format (plus the RFC 3394 test vectors), not yet against a real Apple-made encrypted backup.
+- Filesystem-dump mode is tested against synthetic dump layouts only.
 
 ## Tests
 
@@ -165,7 +187,7 @@ The report lists which checks ran and how much data each saw, so "no findings" c
 python3 -m unittest discover -s tests -v
 ```
 
-The test suite checks all pinned public IOC package names, a high-risk special-access combination, and a benign control. The iOS tests build synthetic backups and check every pinned network indicator, subdomain matching without false positives on shared hosts, jailbreak and profile/MDM detection, Safari and message IOC hits, encrypted-backup refusal, report structure, and that the backup is left unchanged.
+The test suite checks all pinned public IOC package names, a high-risk special-access combination, and a benign control. The iOS tests build synthetic backups and check every pinned network indicator, subdomain matching without false positives on shared hosts, jailbreak and profile/MDM detection, Safari and message IOC hits, report structure, and that the backup is left unchanged. Phase 2 tests (`tests/test_ios_phase2.py`) cover RFC 3394 key-wrap vectors and full synthetic encrypted backups on every installed AES backend, wrong/missing password, a clear error when no AES package is installed, that unencrypted scans never import one, the dual-use list's sources and MEDIUM-only scoring, app inventory, provisioning-profile types and HIGH corroboration, filesystem-dump mode, and the MVT handoff. Encrypted-backup tests are skipped if neither `cryptography` nor `pycryptodome` is installed.
 
 ## Ethical use
 
