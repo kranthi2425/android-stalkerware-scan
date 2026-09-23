@@ -1,0 +1,3095 @@
+{
+  "source": "https://github.com/AssoEchap/stalkerware-indicators",
+  "source_file": "generated/network.csv",
+  "source_ref": "a04c5c1958bff93fec3b1b56edbb412b209f2a38",
+  "retrieved": "2026-09-23",
+  "license": "CC-BY-4.0",
+  "license_note": "Upstream IOC data by Echap, licensed CC-BY 4.0; see source repository for terms and updates.",
+  "application_families": 110,
+  "counts": {
+    "domains": 958,
+    "ipv4": 65,
+    "urls": 2
+  },
+  "domains": {
+    "11111.pl": [
+      "Spyone"
+    ],
+    "12d60.appspot.com": [
+      "Trackplus"
+    ],
+    "12d60.firebaseio.com": [
+      "Trackplus"
+    ],
+    "13-5.org": [
+      "Trackplus"
+    ],
+    "13-5.ru": [
+      "Trackplus"
+    ],
+    "178.63.71.15": [
+      "HelloSpy"
+    ],
+    "1ca43.appspot.com": [
+      "TheTruthSpy"
+    ],
+    "1topspy.com": [
+      "HelloSpy"
+    ],
+    "4-dot-all-tracker.appspot.com": [
+      "AllTracker"
+    ],
+    "4jslg.11111.pl": [
+      "Spyone"
+    ],
+    "6-dot-all-tracker.appspot.com": [
+      "AllTracker"
+    ],
+    "6287970dd9.era3000.com": [
+      "OwnSpy"
+    ],
+    "6kvses.com": [
+      "MobileTool"
+    ],
+    "83dd4.appspot.com": [
+      "iKeyMonitor"
+    ],
+    "8916f.appspot.com": [
+      "BlurSpy"
+    ],
+    "89685.firebaseio.com": [
+      "Trackplus"
+    ],
+    "97.logger.mobi": [
+      "EasyLogger"
+    ],
+    "a-qa3.thd.cc": [
+      "mSpy"
+    ],
+    "a-spy.com": [
+      "AndroidSpy"
+    ],
+    "a.hw.cab": [
+      "Hoverwatch"
+    ],
+    "a.hwa.cab": [
+      "Hoverwatch"
+    ],
+    "a.syncvch.com": [
+      "Hoverwatch"
+    ],
+    "a.thd.cc": [
+      "mSpy"
+    ],
+    "a342f.appspot.com": [
+      "Unisafe"
+    ],
+    "a71f4.firebaseio.com": [
+      "HighsterMobile"
+    ],
+    "absolutesoftsystem.in": [
+      "AbsoluTrack"
+    ],
+    "ac480.firebaseio.com": [
+      "HighsterMobile"
+    ],
+    "account.cellphone-remote-tracker.com": [
+      "HelloSpy"
+    ],
+    "account.childsafetytrackerapp.com": [
+      "EasyLogger"
+    ],
+    "account.logger.mobi": [
+      "EasyLogger"
+    ],
+    "account.refog.com": [
+      "Hoverwatch"
+    ],
+    "account.trackerplus.ru": [
+      "Trackplus"
+    ],
+    "admin.flexispy.com": [
+      "FlexiSpy"
+    ],
+    "alert.bk128.com": [
+      "XNSpy"
+    ],
+    "alert.xiz4me.com": [
+      "XNSpy"
+    ],
+    "ali.panspy.com": [
+      "PanSpy"
+    ],
+    "all-tracker.appspot.com": [
+      "AllTracker"
+    ],
+    "all-tracker.firebaseio.com": [
+      "AllTracker"
+    ],
+    "alltracker.org": [
+      "AllTracker"
+    ],
+    "alog.umeng.com": [
+      "Cocospy"
+    ],
+    "alter757.info": [
+      "mSpy"
+    ],
+    "amon.android-monitor.ru": [
+      "AndroidPolice"
+    ],
+    "amon1.android-monitor.ru": [
+      "AndroidPolice"
+    ],
+    "analytics.trackview.net": [
+      "TrackView"
+    ],
+    "and.info-taxi.info": [
+      "Trackplus"
+    ],
+    "andmon.name": [
+      "AndroidPolice"
+    ],
+    "android-api.umobix.com": [
+      "uMobix"
+    ],
+    "android-apk.android-monitor.ru": [
+      "AndroidPolice"
+    ],
+    "android-apps.s3.amazonaws.com": [
+      "OneSpy"
+    ],
+    "android-monitor.ru": [
+      "AndroidPolice"
+    ],
+    "android-monitor1.android-monitor.ru": [
+      "AndroidPolice"
+    ],
+    "android-police.android-monitor.ru": [
+      "AndroidPolice"
+    ],
+    "android-police.ru": [
+      "AndroidPolice"
+    ],
+    "android.chyldmonitor.com": [
+      "OneSpy"
+    ],
+    "android.spy24.app": [
+      "Spy24"
+    ],
+    "android.spytoapp.com": [
+      "SpyToApp"
+    ],
+    "android.viptrack.ro": [
+      "VIPTrack"
+    ],
+    "androidapk.biz": [
+      "SpyKontrol"
+    ],
+    "androidlost.appspot.com": [
+      "AndroidLost"
+    ],
+    "androidlost.com": [
+      "AndroidLost"
+    ],
+    "androidlost.firebaseio.com": [
+      "AndroidLost"
+    ],
+    "anmon.android-monitor.ru": [
+      "AndroidPolice"
+    ],
+    "anmon.name": [
+      "AndroidPolice"
+    ],
+    "anmon.ru": [
+      "AndroidPolice"
+    ],
+    "anmon.su": [
+      "AndroidPolice"
+    ],
+    "anmon1.android-monitor.ru": [
+      "AndroidPolice"
+    ],
+    "antitheft-88554.firebaseio.com": [
+      "AbsoluTrack"
+    ],
+    "aovivo.foxspy.com.br": [
+      "EspiaoAndroid"
+    ],
+    "api-project-285519687053.firebaseio.com": [
+      "TrackView"
+    ],
+    "api-project-999803017449.firebaseio.com": [
+      "Cerberus"
+    ],
+    "api.awarenesstechnologies.com": [
+      "WebWatcher"
+    ],
+    "api.bytepioner.com": [
+      "CouplerTracker"
+    ],
+    "api.childsafetytrackerapp.com": [
+      "EasyLogger"
+    ],
+    "api.clevguard.com": [
+      "ClevGuard"
+    ],
+    "api.corn-cob.com": [
+      "AiSpyer"
+    ],
+    "api.cp.onemonitar.com": [
+      "OneSpy"
+    ],
+    "api.findmykids.org": [
+      "FindMyKids"
+    ],
+    "api.flexispy.com": [
+      "FlexiSpy"
+    ],
+    "api.free-spy.com": [
+      "AppSpy"
+    ],
+    "api.lifecircle.app": [
+      "TrackView"
+    ],
+    "api.mobilebackup.biz": [
+      "NexSpy"
+    ],
+    "api.mobilespy.at": [
+      "MobileSpy"
+    ],
+    "api.mycellspy.com": [
+      "MyCellSpy"
+    ],
+    "api.ogymogy.com": [
+      "TheOneSpy"
+    ],
+    "api.seniorsafetyapp.com": [
+      "EasyLogger"
+    ],
+    "api.snoopza.com": [
+      "Snoopza"
+    ],
+    "api.spylix.com": [
+      "Spylix"
+    ],
+    "api.thd.cc": [
+      "mSpy"
+    ],
+    "api.trackview.lifecircle.app": [
+      "TrackView"
+    ],
+    "api.ttspy.com": [
+      "jjspy"
+    ],
+    "api007.foxspy.com.br": [
+      "EspiaoAndroid"
+    ],
+    "api1.easydoc.info": [
+      "MobileTrackerFree"
+    ],
+    "api3.easydoc.info": [
+      "MobileTrackerFree"
+    ],
+    "apidemo.spylix.com": [
+      "Spylix"
+    ],
+    "apispyhuman.com": [
+      "SpyHuman"
+    ],
+    "apitest.awarenesstechnologies.com": [
+      "WebWatcher"
+    ],
+    "apiv4.alter757.info": [
+      "mSpy"
+    ],
+    "apk.mtf.re": [
+      "MobileTrackerFree"
+    ],
+    "apk01.spytoapp.com": [
+      "SpyToApp"
+    ],
+    "apk02.spytoapp.com": [
+      "SpyToApp"
+    ],
+    "apk03.spytoapp.com": [
+      "SpyToApp"
+    ],
+    "apk04.spytoapp.com": [
+      "SpyToApp"
+    ],
+    "apk7.biz": [
+      "Tracku"
+    ],
+    "apollospy.com": [
+      "Reptilicus"
+    ],
+    "app-api.phonedata.me": [
+      "Cocospy"
+    ],
+    "app-api.spyzie.com": [
+      "Cocospy"
+    ],
+    "app.antifurtodroid.com": [
+      "AntiFurtoDroid"
+    ],
+    "app.api.spyzie.wondershare.cn": [
+      "Cocospy"
+    ],
+    "app.appspy.net": [
+      "AppSpy"
+    ],
+    "app.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "app.foreverspy.com": [
+      "Metasploit"
+    ],
+    "app.mobiletracking.app": [
+      "TheTruthSpy"
+    ],
+    "app.ogymogy.com": [
+      "TheOneSpy"
+    ],
+    "app.snoopza.com": [
+      "Snoopza"
+    ],
+    "app.xdspy.app": [
+      "XDSpy"
+    ],
+    "app.xpspy.com": [
+      "TheTruthSpy"
+    ],
+    "app.xyspy.com": [
+      "TheTruthSpy"
+    ],
+    "app2.snoopza.com": [
+      "Snoopza"
+    ],
+    "appjiagu.com": [
+      "Cocospy"
+    ],
+    "apprtc.appspot.com": [
+      "KidsShield"
+    ],
+    "appspy-net.firebaseio.com": [
+      "AppSpy"
+    ],
+    "appspy.net": [
+      "AppSpy"
+    ],
+    "aps12.spyhuman.com": [
+      "SpyHuman"
+    ],
+    "aps13.spyhuman.com": [
+      "SpyHuman"
+    ],
+    "aps14.spyhuman.com": [
+      "SpyHuman"
+    ],
+    "aps15.spyhuman.com": [
+      "SpyHuman"
+    ],
+    "aps16.spyhuman.com": [
+      "SpyHuman"
+    ],
+    "aps16042016.spyhuman.com": [
+      "SpyHuman"
+    ],
+    "aps17.spyhuman.com": [
+      "SpyHuman"
+    ],
+    "aps18data.securebackuponline.net": [
+      "SpyHuman"
+    ],
+    "aps18file.securebackuponline.net": [
+      "SpyHuman"
+    ],
+    "aps2.spyhuman.com": [
+      "SpyHuman"
+    ],
+    "aps22.spyhuman.com": [
+      "SpyHuman"
+    ],
+    "asgard-f8c53.firebaseio.com": [
+      "GPSTrackerLoki"
+    ],
+    "ass.absolutesoftsystem.in": [
+      "AbsoluTrack"
+    ],
+    "asset.bk128.com": [
+      "XNSpy"
+    ],
+    "auto-forward.com": [
+      "HighsterMobile"
+    ],
+    "autoforward-8433d.firebaseio.com": [
+      "HighsterMobile"
+    ],
+    "awamisolution.com": [
+      "SmartKeylogger"
+    ],
+    "awsapi.io": [
+      "iKeyMonitor"
+    ],
+    "b.appjiagu.com": [
+      "Cocospy"
+    ],
+    "b55y.net": [
+      "mSpy"
+    ],
+    "back.brunoespiao.com.br": [
+      "BrunoEspiao"
+    ],
+    "backup-a71f4.firebaseio.com": [
+      "HighsterMobile"
+    ],
+    "bark-android-media.s3.amazonaws.com": [
+      "bark"
+    ],
+    "bbrp.co": [
+      "mSpy"
+    ],
+    "best-spy-apps.com": [
+      "Trackplus"
+    ],
+    "beta-api.logger.mobi": [
+      "EasyLogger"
+    ],
+    "beta.logger.mobi": [
+      "EasyLogger"
+    ],
+    "beta.smstracker.com": [
+      "CallSMSTracker"
+    ],
+    "bi.thd.cc": [
+      "mSpy"
+    ],
+    "bincdi.6kvses.com": [
+      "MobileTool"
+    ],
+    "bincdi.birxpk.com": [
+      "MobileTool"
+    ],
+    "birxpk.com": [
+      "MobileTool"
+    ],
+    "bk128.com": [
+      "XNSpy"
+    ],
+    "blurspy.com": [
+      "BlurSpy"
+    ],
+    "brilliant-flame-585.firebaseio.com": [
+      "XNSpy"
+    ],
+    "brunoespiao.com": [
+      "BrunoEspiao"
+    ],
+    "brunoespiao.com.br": [
+      "BrunoEspiao"
+    ],
+    "brunoespiao2.s3.amazonaws.com": [
+      "BrunoEspiao"
+    ],
+    "c-phone.ru": [
+      "Bulgok"
+    ],
+    "c.appjiagu.com": [
+      "Cocospy"
+    ],
+    "c1.panspy.com": [
+      "PanSpy"
+    ],
+    "c9db9bbc8d.era3000.com": [
+      "OwnSpy"
+    ],
+    "cabinet.ecohouse-eg.com": [
+      "Reptilicus"
+    ],
+    "cabinet.gps-monitor.uz": [
+      "Reptilicus"
+    ],
+    "cabinet.kfnm.ru": [
+      "Reptilicus"
+    ],
+    "cabinet.thecybernanny.com": [
+      "Reptilicus"
+    ],
+    "cabinet.vegosm.ru": [
+      "Reptilicus"
+    ],
+    "cabinet.vkur.se": [
+      "Reptilicus"
+    ],
+    "cabinet.vkur1.se": [
+      "Reptilicus"
+    ],
+    "catwatchful-e03b8-2.firebaseio.com": [
+      "CatWatchful"
+    ],
+    "catwatchful-e03b8.firebaseio.com": [
+      "CatWatchful"
+    ],
+    "catwatchful.com": [
+      "CatWatchful"
+    ],
+    "cell-phones-tracker.net": [
+      "EasyPhoneTrack"
+    ],
+    "cell-tracker-green.firebaseio.com": [
+      "TrackMyPhones"
+    ],
+    "cell-tracker-updated.firebaseio.com": [
+      "TrackMyPhones"
+    ],
+    "cellmonitoring.co": [
+      "PhoneSheriff"
+    ],
+    "cellphone-remote-tracker.com": [
+      "HelloSpy"
+    ],
+    "cellphoneservices.info": [
+      "HighsterMobile"
+    ],
+    "celltracker.mobi": [
+      "EasyPhoneTrack"
+    ],
+    "celltrackernew.firebaseio.com": [
+      "MobileTrackerFree"
+    ],
+    "celular007.s3.amazonaws.com": [
+      "EspiaoAndroid"
+    ],
+    "cerberusapp.com": [
+      "Cerberus"
+    ],
+    "clevguard.net": [
+      "ClevGuard"
+    ],
+    "client.mobilefonex.com": [
+      "FlexiSpy"
+    ],
+    "client.spyhide.com": [
+      "HelloSpy"
+    ],
+    "client.spyhide.ir": [
+      "HelloSpy"
+    ],
+    "clientreport.info": [
+      "NeoSpy"
+    ],
+    "cloud.ttspy.com": [
+      "jjspy"
+    ],
+    "clues.link": [
+      "Tracku"
+    ],
+    "clues4.com": [
+      "Tracku"
+    ],
+    "cluestr.com": [
+      "Tracku"
+    ],
+    "cnapi.trackview.net": [
+      "TrackView"
+    ],
+    "control-phone-a05a3.firebaseio.com": [
+      "Bulgok"
+    ],
+    "copy9.com": [
+      "TheTruthSpy"
+    ],
+    "copy9db.com": [
+      "HelloSpy"
+    ],
+    "corn-cob.com": [
+      "AiSpyer"
+    ],
+    "cp.mspyonline.com": [
+      "mSpy"
+    ],
+    "cp.thewispy.com": [
+      "TheWiSpy"
+    ],
+    "cpcalendars.spymasterpro.com": [
+      "SpyMasterPro"
+    ],
+    "cpcontacts.spymasterpro.com": [
+      "SpyMasterPro"
+    ],
+    "d-app-apk.com": [
+      "MobileTrackerFree"
+    ],
+    "d.appjiagu.com": [
+      "Cocospy"
+    ],
+    "d.corn-cob.com": [
+      "AiSpyer"
+    ],
+    "d.d-app-apk.com": [
+      "MobileTrackerFree"
+    ],
+    "d.tispy.net": [
+      "KidsShield"
+    ],
+    "d1.panspy.com": [
+      "PanSpy"
+    ],
+    "d1gslyvqtipqvi.cloudfront.net": [
+      "Mrecorder"
+    ],
+    "d24lo6rmha82nf.cloudfront.net": [
+      "Mrecorder"
+    ],
+    "d2nipadu1fr4ne.cloudfront.net": [
+      "Spylix"
+    ],
+    "d3g4zswpacwtfb.cloudfront.net": [
+      "Mrecorder"
+    ],
+    "data-api.phonedata.me": [
+      "Cocospy"
+    ],
+    "data-api.spyzie.com": [
+      "Cocospy"
+    ],
+    "data-webwatcherdata-alb-1451089636.us-west-2.elb.amazonaws.com": [
+      "WebWatcher"
+    ],
+    "data.api.spyzie.wondershare.cn": [
+      "Cocospy"
+    ],
+    "data.qa.webwatcherdata.com": [
+      "WebWatcher"
+    ],
+    "data.reptilicus.net": [
+      "Reptilicus"
+    ],
+    "data.webwatcherdata.com": [
+      "WebWatcher"
+    ],
+    "data240.mrec24.com": [
+      "Mrecorder"
+    ],
+    "data241.mrec24.com": [
+      "Mrecorder"
+    ],
+    "ddiutilities.com": [
+      "HighsterMobile"
+    ],
+    "dev.hoverwatch.com": [
+      "Hoverwatch"
+    ],
+    "dev.snoopza.com": [
+      "Snoopza"
+    ],
+    "dev2.refog.com": [
+      "Hoverwatch"
+    ],
+    "device-ac480.appspot.com": [
+      "HighsterMobile"
+    ],
+    "device-ac480.firebaseio.com": [
+      "HighsterMobile"
+    ],
+    "disp2.mrec24.com": [
+      "Mrecorder"
+    ],
+    "dispatcher.mrecorder.com": [
+      "Mrecorder"
+    ],
+    "djp.bz": [
+      "FlexiSpy"
+    ],
+    "dmw.bz": [
+      "FlexiSpy"
+    ],
+    "dmw.cc": [
+      "FlexiSpy"
+    ],
+    "downapk.spytoapp.com": [
+      "SpyToApp"
+    ],
+    "download.freespyphone.net": [
+      "SpyAdvice"
+    ],
+    "download.mobile-tracker-free.me": [
+      "MobileTrackerFree"
+    ],
+    "download.webwatcherdata.com": [
+      "WebWatcher"
+    ],
+    "downloads.refog.com": [
+      "Hoverwatch"
+    ],
+    "downloads.shadow-spy.com": [
+      "ShadowSpy"
+    ],
+    "droimon20.ru": [
+      "AndroidPolice"
+    ],
+    "dwn.vys.me": [
+      "MobiStealth"
+    ],
+    "dz7.wethnc067.xyz": [
+      "MobileTool"
+    ],
+    "e-spy.app": [
+      "Tracku"
+    ],
+    "e-spy.org": [
+      "Tracku"
+    ],
+    "e.appjiagu.com": [
+      "Cocospy"
+    ],
+    "e2c64.firebaseio.com": [
+      "Reptilicus"
+    ],
+    "eaglespy.com.br": [
+      "eagleSPY"
+    ],
+    "easydoc.info": [
+      "MobileTrackerFree"
+    ],
+    "easyloggerbeta.azurewebsites.net": [
+      "EasyLogger"
+    ],
+    "easyphonetrack.com": [
+      "EasyPhoneTrack"
+    ],
+    "ecom.flexispy.com": [
+      "FlexiSpy"
+    ],
+    "edlnc255s2q.s3.amazonaws.com": [
+      "Trackplus"
+    ],
+    "einformatiks.com": [
+      "MobiStealth"
+    ],
+    "elcore-api.azurewebsites.net": [
+      "EasyLogger"
+    ],
+    "em.awsapi.io": [
+      "iKeyMonitor"
+    ],
+    "emcpanel.com": [
+      "iKeyMonitor"
+    ],
+    "enterprise.cerberusapp.com": [
+      "Cerberus"
+    ],
+    "evt17.com": [
+      "HighsterMobile"
+    ],
+    "eyezyapp.thd.cc": [
+      "mSpy"
+    ],
+    "f.appjiagu.com": [
+      "Cocospy"
+    ],
+    "find-my-phone-prod.herokuapp.com": [
+      "FindMyPhone"
+    ],
+    "findmyphone.mangobird.com": [
+      "FindMyPhone"
+    ],
+    "flower.snoopza.com": [
+      "Snoopza"
+    ],
+    "flushdata.1topspy.com": [
+      "HelloSpy"
+    ],
+    "flushdata.copy9db.com": [
+      "HelloSpy"
+    ],
+    "flushdata.hellospy.com": [
+      "HelloSpy"
+    ],
+    "flushdata2.hellospy.com": [
+      "HelloSpy"
+    ],
+    "flushdata3.hellospy.com": [
+      "HelloSpy"
+    ],
+    "flushdata4.hellospy.com": [
+      "HelloSpy"
+    ],
+    "flushdata5.hellospy.com": [
+      "HelloSpy"
+    ],
+    "flushdbd.maxxspy.com": [
+      "HelloSpy"
+    ],
+    "fmk.god-xc.com": [
+      "FindMyKids"
+    ],
+    "fonemonitor.vip": [
+      "Cocospy"
+    ],
+    "foreverspy.com": [
+      "Metasploit"
+    ],
+    "freemobilespy.net": [
+      "AppSpy"
+    ],
+    "freespyapp.com": [
+      "KidsShield"
+    ],
+    "ftp.info-taxi.info": [
+      "Trackplus"
+    ],
+    "g.appjiagu.com": [
+      "Cocospy"
+    ],
+    "get.snoopza.com": [
+      "Snoopza"
+    ],
+    "getmspy.net": [
+      "mSpy"
+    ],
+    "getspylix.io": [
+      "Spylix"
+    ],
+    "guestspy.com": [
+      "TheTruthSpy"
+    ],
+    "gurley.s3.ap-southeast-1.wasabisys.com": [
+      "PhoneMonitor"
+    ],
+    "h.appjiagu.com": [
+      "Cocospy"
+    ],
+    "hellospy.com": [
+      "HelloSpy"
+    ],
+    "hover.watch": [
+      "Hoverwatch"
+    ],
+    "hoverwatch.com": [
+      "Hoverwatch"
+    ],
+    "hw.cab": [
+      "Hoverwatch"
+    ],
+    "hwa.cab": [
+      "Hoverwatch"
+    ],
+    "hwm.cab": [
+      "Hoverwatch"
+    ],
+    "hws.icu": [
+      "Hoverwatch"
+    ],
+    "hww.cab": [
+      "Hoverwatch"
+    ],
+    "hz-service.thd.cc": [
+      "mSpy"
+    ],
+    "hz7.thd.cc": [
+      "mSpy"
+    ],
+    "hzdy.birxpk.com": [
+      "MobileTool"
+    ],
+    "i.cocospy.com": [
+      "Cocospy"
+    ],
+    "i.fonemonitor.co": [
+      "Cocospy"
+    ],
+    "i.hoverwatch.com": [
+      "Hoverwatch"
+    ],
+    "i.minspy.com": [
+      "Cocospy"
+    ],
+    "i.neatspy.com": [
+      "Cocospy"
+    ],
+    "i.safespy.com": [
+      "Cocospy"
+    ],
+    "i.spyic.com": [
+      "Cocospy"
+    ],
+    "i.spyier.com": [
+      "Spyier"
+    ],
+    "i.spyine.com": [
+      "Cocospy"
+    ],
+    "i.spyzie.io": [
+      "Cocospy"
+    ],
+    "i.teensafe.net": [
+      "Cocospy"
+    ],
+    "i1.hoverwatch.com": [
+      "Hoverwatch"
+    ],
+    "i10.clientreport.info": [
+      "NeoSpy"
+    ],
+    "i11.clientreport.info": [
+      "NeoSpy"
+    ],
+    "i12.clientreport.info": [
+      "NeoSpy"
+    ],
+    "i13.clientreport.info": [
+      "NeoSpy"
+    ],
+    "i6.clientreport.info": [
+      "NeoSpy"
+    ],
+    "i7.clientreport.info": [
+      "NeoSpy"
+    ],
+    "i8.clientreport.info": [
+      "NeoSpy"
+    ],
+    "i9.clientreport.info": [
+      "NeoSpy"
+    ],
+    "icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "idevs.co": [
+      "mSpy"
+    ],
+    "ikeymonitor.com": [
+      "iKeyMonitor"
+    ],
+    "ikeymonitor.fr": [
+      "iKeyMonitor"
+    ],
+    "ikm.awsapi.io": [
+      "iKeyMonitor"
+    ],
+    "im.brunoespiao.com.br": [
+      "BrunoEspiao"
+    ],
+    "im.theonespy.com": [
+      "TheOneSpy"
+    ],
+    "images.msafely.com": [
+      "Msafely"
+    ],
+    "images.spyphone.cc": [
+      "Msafely"
+    ],
+    "images.spyx.com": [
+      "Msafely"
+    ],
+    "imobispy.com": [
+      "SpyMasterPro"
+    ],
+    "imonitor-da8b2.firebaseio.com": [
+      "iMonitorSpy"
+    ],
+    "imonitorke.com": [
+      "iMonitorSpy"
+    ],
+    "imonitorsoft.cn": [
+      "iMonitorSpy"
+    ],
+    "imonitorsoft.com": [
+      "iMonitorSpy"
+    ],
+    "info-taxi.info": [
+      "Trackplus"
+    ],
+    "installam.com": [
+      "AndroidMonitor"
+    ],
+    "inv.logger.mobi": [
+      "EasyLogger"
+    ],
+    "ioi.life": [
+      "AiSpyer"
+    ],
+    "ios-gw.spynger.net": [
+      "Spynger"
+    ],
+    "ixhtb.s9gxw8.com": [
+      "MobileTool"
+    ],
+    "izapk.xyz": [
+      "Tracku"
+    ],
+    "izspy-1313.firebaseio.com": [
+      "Tracku"
+    ],
+    "jailbreak-gateway.thd.cc": [
+      "mSpy"
+    ],
+    "jjspy.com": [
+      "jjspy"
+    ],
+    "jjspy.ml": [
+      "jjspy"
+    ],
+    "key-logger-90fff.firebaseio.com": [
+      "TrackMyPhones"
+    ],
+    "kidsguard-6c6a9.firebaseio.com": [
+      "ClevGuard"
+    ],
+    "kidsshield.net": [
+      "KidsShield"
+    ],
+    "klg.a-spy.com": [
+      "AndroidSpy"
+    ],
+    "kokum.ru": [
+      "Trackplus"
+    ],
+    "kuuvv.com": [
+      "Cocospy"
+    ],
+    "kvshdi.birxpk.com": [
+      "MobileTool"
+    ],
+    "kypler.com": [
+      "mSpy"
+    ],
+    "l.servidor.in": [
+      "MeuSpy"
+    ],
+    "labrador.ua": [
+      "Reptilicus"
+    ],
+    "laucass.forumactif.org": [
+      "Spyone"
+    ],
+    "lb.theonespy.com": [
+      "TheOneSpy"
+    ],
+    "letmespy.com": [
+      "LetMeSpy"
+    ],
+    "lifecircle-223805.firebaseio.com": [
+      "TrackView"
+    ],
+    "locatorprivacy.com": [
+      "OneLocator"
+    ],
+    "login.quanly24h.net": [
+      "KidsShield"
+    ],
+    "login.webwatcher.com": [
+      "WebWatcher"
+    ],
+    "loverman.net": [
+      "MobileTrackerFree"
+    ],
+    "m-media.thd.cc": [
+      "mSpy"
+    ],
+    "m.a-spy.com": [
+      "AndroidSpy"
+    ],
+    "m.asgardtech.ru": [
+      "GPSTrackerLoki"
+    ],
+    "m.lifecircle.app": [
+      "TrackView"
+    ],
+    "m.pgv4.com": [
+      "SpyApp"
+    ],
+    "maglook.eu": [
+      "MagMonitor"
+    ],
+    "maxxspy.com": [
+      "HelloSpy"
+    ],
+    "mcloud-api.thd.cc": [
+      "mSpy"
+    ],
+    "media-sync-a.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a.exactspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a.ispyoo.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a100.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a100.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a600.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a621.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a696.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a710.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a740.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a743.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a746.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a747.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a748.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a749.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a780.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a785.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a7xx.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a810.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a820.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a825.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a830.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a835.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a895.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a8xx.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a910.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a915.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a920.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a925.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a930.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a935.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a940.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a941.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a942.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a943.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a944.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a945.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a946.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync-a947.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "media-sync.systemserviceprovider.com": [
+      "TheTruthSpy"
+    ],
+    "media.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "message-tracker-98822.firebaseio.com": [
+      "TrackMyPhones"
+    ],
+    "messages01.smstracker.com": [
+      "CallSMSTracker"
+    ],
+    "messages02.smstracker.com": [
+      "CallSMSTracker"
+    ],
+    "mflx.biz": [
+      "FlexiSpy"
+    ],
+    "mg-spyzie.oss-us-west-1.aliyuncs.com": [
+      "Cocospy"
+    ],
+    "mi.thd.cc": [
+      "mSpy"
+    ],
+    "microtracker-1ca43.firebaseio.com": [
+      "TheTruthSpy"
+    ],
+    "mintrack.vip": [
+      "Cocospy"
+    ],
+    "mlite-app.livekit.cloud": [
+      "mSpy"
+    ],
+    "mlite-app.thd.cc": [
+      "mSpy"
+    ],
+    "mlite-socket.thd.cc": [
+      "mSpy"
+    ],
+    "mliteapp.alter757.info": [
+      "mSpy"
+    ],
+    "mob-app-gw.spynger.net": [
+      "Spynger"
+    ],
+    "mob.eurotrans.kz": [
+      "Reptilicus"
+    ],
+    "mobi22.com": [
+      "Mrecorder"
+    ],
+    "mobiispy.com": [
+      "HelloSpy"
+    ],
+    "mobil-kem.com": [
+      "SpyPhoneApp"
+    ],
+    "mobile-gw.thd.cc": [
+      "mSpy"
+    ],
+    "mobile-tracker-data.com": [
+      "MobileTrackerFree"
+    ],
+    "mobile-tracker-free.com": [
+      "MobileTrackerFree"
+    ],
+    "mobilenannylogs.com": [
+      "PhoneSheriff"
+    ],
+    "mobilerecorder-1277.firebaseio.com": [
+      "Mrecorder"
+    ],
+    "mobiletool.ru": [
+      "MobileTool"
+    ],
+    "monitor-android.android-monitor.ru": [
+      "AndroidPolice"
+    ],
+    "monitor-ultra.com": [
+      "MonitorUltra"
+    ],
+    "mrec24.com": [
+      "Mrecorder"
+    ],
+    "mrswd.wo87sf.com": [
+      "MobileTool"
+    ],
+    "msafe.xyz": [
+      "Tracku"
+    ],
+    "mspy.alter757.info": [
+      "mSpy"
+    ],
+    "mspyonline.com": [
+      "mSpy"
+    ],
+    "mspytrackercom.alter757.info": [
+      "mSpy"
+    ],
+    "mtechn.zendesk.com": [
+      "mSpy"
+    ],
+    "mtf.re": [
+      "MobileTrackerFree"
+    ],
+    "mtoolapp.biz": [
+      "MobileTool"
+    ],
+    "mtoolapp.net": [
+      "MobileTool"
+    ],
+    "mtracker.fortess.net": [
+      "WiseMo"
+    ],
+    "mxspy.com": [
+      "TheTruthSpy"
+    ],
+    "my-spy-a9c92.firebaseio.com": [
+      "MySpyApps"
+    ],
+    "my.a-spy.com": [
+      "AndroidSpy"
+    ],
+    "my.aispyer.com": [
+      "AiSpyer"
+    ],
+    "my.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "my.ispyoo.com": [
+      "TheTruthSpy"
+    ],
+    "my.jjspy.com": [
+      "jjspy"
+    ],
+    "my.kidsecured.com": [
+      "mSpy"
+    ],
+    "my.mobiletool.ru": [
+      "MobileTool"
+    ],
+    "my.mobispy.net": [
+      "MobiSpy"
+    ],
+    "my.mrec24.com": [
+      "Mrecorder"
+    ],
+    "my.mspyonline.com": [
+      "mSpy"
+    ],
+    "my.mtoolapp.net": [
+      "MobileTool"
+    ],
+    "my.nexspy.com": [
+      "NexSpy"
+    ],
+    "my.phonsee.com": [
+      "mSpy"
+    ],
+    "my.securechildren.online": [
+      "mSpy"
+    ],
+    "my.snoopza.com": [
+      "Snoopza"
+    ],
+    "my.spylix.com": [
+      "Spylix"
+    ],
+    "my.spynger.net": [
+      "Spynger"
+    ],
+    "my.spyzie.com": [
+      "Cocospy"
+    ],
+    "my.thespyapp.com": [
+      "TheTruthSpy"
+    ],
+    "my.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "my2.snoopza.com": [
+      "Snoopza"
+    ],
+    "myappmobile-537f7.firebaseio.com": [
+      "MobileTrackerFree"
+    ],
+    "mycloud.wisemo.com": [
+      "WiseMo"
+    ],
+    "mycloud1.wisemo.com": [
+      "WiseMo"
+    ],
+    "mydwnd.com": [
+      "XNSpy"
+    ],
+    "mzpgfh.uhabq9.com": [
+      "MobileTool"
+    ],
+    "n.servidor.in": [
+      "MeuSpy"
+    ],
+    "n6sm2m.celltracker.io": [
+      "MobileTrackerFree"
+    ],
+    "neatspy.vip": [
+      "Cocospy"
+    ],
+    "nemospy.com": [
+      "NemoSpy"
+    ],
+    "netspy-7b8ec.firebaseio.com": [
+      "NetSpy"
+    ],
+    "new.androidlost.com": [
+      "AndroidLost"
+    ],
+    "ngc77.com": [
+      "HighsterMobile"
+    ],
+    "node-api.theonespy.com": [
+      "TheOneSpy"
+    ],
+    "node1.theonespy.com": [
+      "TheOneSpy"
+    ],
+    "node2.theonespy.com": [
+      "TheOneSpy"
+    ],
+    "node3.theonespy.com": [
+      "TheOneSpy"
+    ],
+    "node4.theonespy.com": [
+      "TheOneSpy"
+    ],
+    "node5.theonespy.com": [
+      "TheOneSpy"
+    ],
+    "nodejs.spyhuman.com": [
+      "SpyHuman"
+    ],
+    "noujx.s9gxw8.com": [
+      "MobileTool"
+    ],
+    "observer.back4app.io": [
+      "Observer"
+    ],
+    "office.hw.cab": [
+      "Hoverwatch"
+    ],
+    "ogymoggy.firebaseio.com": [
+      "TheOneSpy"
+    ],
+    "olurdaolurdediler.shop": [
+      "MobileTrackerFree"
+    ],
+    "onespy-in-196211.firebaseio.com": [
+      "OneSpy"
+    ],
+    "onespy-in-d.s3.eu-central-1.amazonaws.com": [
+      "OneSpy"
+    ],
+    "onlinefundb.com": [
+      "TrackingSmartphone"
+    ],
+    "package.mrec24.com": [
+      "Mrecorder"
+    ],
+    "package2.mrec24.com": [
+      "Mrecorder"
+    ],
+    "panel.spy24.net": [
+      "Spy24"
+    ],
+    "panel24.org": [
+      "Spy24"
+    ],
+    "panspy-1.oss-us-west-1.aliyuncs.com": [
+      "PanSpy"
+    ],
+    "panspy.com": [
+      "PanSpy"
+    ],
+    "panspy.me": [
+      "PanSpy"
+    ],
+    "pc.backupsoft.eu": [
+      "KidsShield"
+    ],
+    "pc.brunoespiao.com.br": [
+      "BrunoEspiao"
+    ],
+    "pc.foxspy.com.br": [
+      "EspiaoAndroid"
+    ],
+    "pc.freespyapp.com": [
+      "KidsShield"
+    ],
+    "pc.selfspy.com": [
+      "KidsShield"
+    ],
+    "pc.spykontrol.com": [
+      "SpyKontrol"
+    ],
+    "pc.spyone.pl": [
+      "Spyone"
+    ],
+    "pc.viptelefonprogrami.com": [
+      "KidsShield"
+    ],
+    "pc1.brunoespiao.com.br": [
+      "BrunoEspiao"
+    ],
+    "pctattletale.com": [
+      "pcTattletale"
+    ],
+    "pctattletalev2.s3.amazonaws.com": [
+      "pcTattletale"
+    ],
+    "pgv4.com": [
+      "SpyApp"
+    ],
+    "phone-backup-service.firebaseio.com": [
+      "jjspy"
+    ],
+    "phonecontrolapp-e2c64.firebaseio.com": [
+      "Reptilicus"
+    ],
+    "phonedata.me": [
+      "Cocospy"
+    ],
+    "phonesheriff.com": [
+      "PhoneSheriff"
+    ],
+    "phonespector-b2f13.firebaseio.com": [
+      "HighsterMobile"
+    ],
+    "phonespector.com": [
+      "HighsterMobile"
+    ],
+    "phonespying.com": [
+      "TheTruthSpy"
+    ],
+    "phonetrack.com": [
+      "EasyPhoneTrack"
+    ],
+    "phonetracker.com": [
+      "SpyphoneMobileTracker"
+    ],
+    "phonetracker95gpsonly.firebaseio.com": [
+      "SpyphoneMobileTracker"
+    ],
+    "phonetracking-dd226.firebaseio.com": [
+      "SpyAdvice"
+    ],
+    "phonetracking.net": [
+      "TheTruthSpy"
+    ],
+    "pi.info-taxi.info": [
+      "Trackplus"
+    ],
+    "pipe.thd.cc": [
+      "mSpy"
+    ],
+    "play-store-3bb64.firebaseio.com": [
+      "MeuSpy"
+    ],
+    "portal.flexispy.com": [
+      "FlexiSpy"
+    ],
+    "pro.logger.mobi": [
+      "EasyLogger"
+    ],
+    "profotoeditor.com": [
+      "HelloSpy"
+    ],
+    "prog-money.android-monitor.ru": [
+      "AndroidPolice"
+    ],
+    "prog-money.com": [
+      "AndroidPolice"
+    ],
+    "project-323448153542050953.firebaseio.com": [
+      "mSpy"
+    ],
+    "project-7991479181228723357.firebaseio.com": [
+      "Mrecorder"
+    ],
+    "protocol-a.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a.exactspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a.guestspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a.ispyoo.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a.mxspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a100.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a100.phoneparental.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a100.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a5.guestspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a58.guestspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a59.guestspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a6.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a60.guestspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a600.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a610.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a610.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a611.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a611.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a612.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a614.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a615.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a616.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a617.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a618.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a620.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a621.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a65.guestspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a69.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a696.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a70.guestspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a710.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a712.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a72.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a720.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a721.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a722.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a723.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a724.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a725.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a726.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a727.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a728.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a729.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a730.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a731.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a732.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a733.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a734.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a735.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a736.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a737.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a738.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a739.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a740.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a741.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a742.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a743.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a744.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a745.mxspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a745.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a746.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a747.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a748.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a749.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a780.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a780.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a780.ispyoo.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a780.mxspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a785.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a785.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a810.ispyoo.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a810.mxspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a810.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a811.ispyoo.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a811.mxspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a880.ispyoo.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a89.ispyoo.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a89.mxspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a910.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a915.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a920.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a925.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a930.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a935.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a940.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a941.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a942.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a943.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a944.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a945.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a946.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-a947.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-monitor.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol-viewer-a.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "protocol.guestspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol.inospy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol.ispyoo.com": [
+      "TheTruthSpy"
+    ],
+    "protocol.mxspy.com": [
+      "TheTruthSpy"
+    ],
+    "protocol.systemserviceprovider.com": [
+      "TheTruthSpy"
+    ],
+    "protocol.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "proxy.reptilicus.net": [
+      "Reptilicus"
+    ],
+    "ps97mailer.logger.mobi": [
+      "EasyLogger"
+    ],
+    "pulsesolutions-net-easy-logger.firebaseio.com": [
+      "EasyLogger"
+    ],
+    "push.mobilefonex.com": [
+      "FlexiSpy"
+    ],
+    "q12z.net": [
+      "mSpy"
+    ],
+    "q95294fs.beget.tech": [
+      "Bulgok"
+    ],
+    "quanly24h.net": [
+      "KidsShield"
+    ],
+    "r.findmykids.org": [
+      "FindMyKids"
+    ],
+    "rc-api.lifecircle.app": [
+      "TrackView"
+    ],
+    "rcomlogin.com": [
+      "WebWatcher"
+    ],
+    "realtime-spy-mobile.com": [
+      "RealtimeSpy"
+    ],
+    "rec.hw.cab": [
+      "Hoverwatch"
+    ],
+    "relay1.trackview.net": [
+      "TrackView"
+    ],
+    "remotecommands.com": [
+      "LetMeSpy"
+    ],
+    "remotesecurity-629f2.firebaseio.com": [
+      "AbsoluTrack"
+    ],
+    "remotesecurityots.firebaseio.com": [
+      "AbsoluTrack"
+    ],
+    "remoto.foxspy.com.br": [
+      "EspiaoAndroid"
+    ],
+    "repo.mspyonline.com": [
+      "mSpy"
+    ],
+    "reptilicus.net": [
+      "Reptilicus"
+    ],
+    "rockalab.com": [
+      "mSpy"
+    ],
+    "rp.apollospy.com": [
+      "Reptilicus"
+    ],
+    "rp.dedrone.com.ua": [
+      "Reptilicus"
+    ],
+    "rp.labrador.ua": [
+      "Reptilicus"
+    ],
+    "rp.liquidblue.com.ua": [
+      "Reptilicus"
+    ],
+    "rrspy.com": [
+      "jjspy"
+    ],
+    "rtc.ttspy.com": [
+      "jjspy"
+    ],
+    "runaki-support.appspot.com": [
+      "ShadowSpy"
+    ],
+    "s.appjiagu.com": [
+      "Cocospy"
+    ],
+    "s.servidor.in": [
+      "MeuSpy"
+    ],
+    "s1.panspy.com": [
+      "PanSpy"
+    ],
+    "s1.spylive360.com": [
+      "SpyLive360"
+    ],
+    "s2.spylive360.com": [
+      "SpyLive360"
+    ],
+    "s3.spylive360.com": [
+      "SpyLive360"
+    ],
+    "s3.thd.cc": [
+      "mSpy"
+    ],
+    "s9gxw8.com": [
+      "MobileTool"
+    ],
+    "safespy.vip": [
+      "Cocospy"
+    ],
+    "sandbox97.childsafetytrackerapp.com": [
+      "EasyLogger"
+    ],
+    "sandbox97.logger.mobi": [
+      "EasyLogger"
+    ],
+    "sandbox97.seniorsafetyapp.com": [
+      "EasyLogger"
+    ],
+    "sap4mobile-89685.firebaseio.com": [
+      "Trackplus"
+    ],
+    "sap4mobile.com": [
+      "Trackplus"
+    ],
+    "sapient-flight-837.firebaseio.com": [
+      "MobileTrackerFree"
+    ],
+    "sbt.tv": [
+      "BrunoEspiao"
+    ],
+    "screentimelabs.appspot.com": [
+      "WebWatcher"
+    ],
+    "secondclone-2d312.firebaseio.com": [
+      "TheTruthSpy"
+    ],
+    "securebackuponline.net": [
+      "SpyHuman"
+    ],
+    "senior-safety-189010.firebaseio.com": [
+      "EasyLogger"
+    ],
+    "senseye.spymasterpro.com": [
+      "SpyMasterPro"
+    ],
+    "sentry-01.thd.cc": [
+      "mSpy"
+    ],
+    "sentry-02.thd.cc": [
+      "mSpy"
+    ],
+    "sentry-03.thd.cc": [
+      "mSpy"
+    ],
+    "sentry-04.thd.cc": [
+      "mSpy"
+    ],
+    "sentry-05.thd.cc": [
+      "mSpy"
+    ],
+    "sentry-06.thd.cc": [
+      "mSpy"
+    ],
+    "sentry-07.thd.cc": [
+      "mSpy"
+    ],
+    "sentry-product-new.bbrp.co": [
+      "mSpy"
+    ],
+    "sentrypc.net": [
+      "SentryPC"
+    ],
+    "server.androidmonitor.com": [
+      "AndroidMonitor"
+    ],
+    "server.freeandroidspy.com": [
+      "FreeAndroidSpy"
+    ],
+    "service.n.weiguanai.cn": [
+      "jjspy"
+    ],
+    "service.weiguanai.cn": [
+      "jjspy"
+    ],
+    "services.spytoapp.com": [
+      "SpyToApp"
+    ],
+    "servicesloggermobi.azurewebsites.net": [
+      "EasyLogger"
+    ],
+    "servidor.in": [
+      "MeuSpy"
+    ],
+    "setup.nemospy.com": [
+      "NemoSpy"
+    ],
+    "setupmail-a.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a720.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a722.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a724.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a725.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a726.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a727.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a729.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a732.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a733.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a734.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a735.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a737.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a738.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a740.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a741.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a742.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a743.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a744.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a745.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a746.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a747.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a748.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a910.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a915.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail-a920.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "setupmail.icloudappe.com": [
+      "TheTruthSpy"
+    ],
+    "shadow-logs.com": [
+      "ShadowSpy"
+    ],
+    "shadow-spy.com": [
+      "ShadowSpy"
+    ],
+    "shadowappbundle-default-rtdb.firebaseio.com": [
+      "ShadowSpy"
+    ],
+    "shadowlogspanel.firebaseio.com": [
+      "ShadowSpy"
+    ],
+    "shadyspy.com": [
+      "ShadySpy"
+    ],
+    "shuch6ba0w.spyrixweb.com": [
+      "EvaSpy"
+    ],
+    "sl360-7ba65.firebaseio.com": [
+      "SpyLive360"
+    ],
+    "smartback-12d60.appspot.com": [
+      "Trackplus"
+    ],
+    "smartback-12d60.firebaseio.com": [
+      "Trackplus"
+    ],
+    "smsandcalltracker.firebaseio.com": [
+      "TrackMyPhones"
+    ],
+    "snoopza.com": [
+      "Snoopza"
+    ],
+    "sp.kuuvv.com": [
+      "Cocospy"
+    ],
+    "sp18022019.firebaseio.com": [
+      "SpyHuman"
+    ],
+    "spc-runtimes.s3.amazonaws.com": [
+      "SentryPC"
+    ],
+    "spy-datacenter.com": [
+      "EasyPhoneTrack"
+    ],
+    "spy24.net": [
+      "Spy24"
+    ],
+    "spy2mobile-bb441.firebaseio.com": [
+      "Trackplus"
+    ],
+    "spy2mobile.com": [
+      "Trackplus"
+    ],
+    "spyadvice.com": [
+      "SpyAdvice"
+    ],
+    "spyapp-8916f.firebaseio.com": [
+      "BlurSpy"
+    ],
+    "spyapp.top": [
+      "Xnore"
+    ],
+    "spyaudiorecorder.firebaseio.com": [
+      "TrackMyPhones"
+    ],
+    "spyera.postaffiliatepro.com": [
+      "SpyEra"
+    ],
+    "spyhide.com": [
+      "HelloSpy"
+    ],
+    "spyhide.ir": [
+      "HelloSpy"
+    ],
+    "spyhuman-97943.firebaseio.com": [
+      "SpyHuman"
+    ],
+    "spyhuman.com": [
+      "SpyHuman"
+    ],
+    "spylive360.com": [
+      "SpyLive360"
+    ],
+    "spylogs.com": [
+      "SpyEra"
+    ],
+    "spymaster-e535b.firebaseio.com": [
+      "SpyMasterPro"
+    ],
+    "spynote.us": [
+      "SpyNote"
+    ],
+    "spyrix-sfk.com": [
+      "EvaSpy"
+    ],
+    "spysetup.com": [
+      "FreeAndroidSpy"
+    ],
+    "spyt.co": [
+      "KidsShield"
+    ],
+    "spytomobile.com": [
+      "Trackplus"
+    ],
+    "spytrac-app1.s3.amazonaws.com": [
+      "KidsShield"
+    ],
+    "spyzee.com": [
+      "TheTruthSpy"
+    ],
+    "spyzie-a.firebaseio.com": [
+      "Cocospy"
+    ],
+    "spyzie.com": [
+      "Cocospy"
+    ],
+    "sse.chyldmonitor.com": [
+      "OneSpy"
+    ],
+    "staging-all-tracker.appspot.com": [
+      "AllTracker"
+    ],
+    "staging.smstracker.com": [
+      "CallSMSTracker"
+    ],
+    "store.mycustomdevice.com": [
+      "FlexiSpy"
+    ],
+    "strapi.msafely.com": [
+      "Msafely"
+    ],
+    "strapi.spyphone.cc": [
+      "Msafely"
+    ],
+    "strapi.spyx.com": [
+      "Msafely"
+    ],
+    "studio11-7e288.firebaseio.com": [
+      "EasyPhoneTrack"
+    ],
+    "support.mtoolapp.biz": [
+      "MobileTool"
+    ],
+    "support.phoneparental.com": [
+      "TheTruthSpy"
+    ],
+    "sxde-download.spyrix-sfk.com": [
+      "EvaSpy"
+    ],
+    "sync-a.copy9.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a.exactspy.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a.ispyoo.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a.mxspy.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a100.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a600.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a712.fonetracker.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a780.mxspy.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a7xx.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a8xx.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a925.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a930.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a935.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a940.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a941.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "sync-a942.thetruthspy.com": [
+      "TheTruthSpy"
+    ],
+    "sync.bk128.com": [
+      "XNSpy"
+    ],
+    "sync.xiz4me.com": [
+      "XNSpy"
+    ],
+    "tagdps.ru": [
+      "Trackplus"
+    ],
+    "talklog.tools": [
+      "TalkLog"
+    ],
+    "tchsrvce.com": [
+      "TalkLog"
+    ],
+    "teensafe.vip": [
+      "Cocospy"
+    ],
+    "test-client.mobilefonex.com": [
+      "FlexiSpy"
+    ],
+    "test.androidlost.com": [
+      "AndroidLost"
+    ],
+    "test.onetouchsecurities.com": [
+      "AbsoluTrack"
+    ],
+    "test.refog.com": [
+      "Hoverwatch"
+    ],
+    "tfk7r22klf8vtd8g90jq8qno1tpqhmpe.apps.googleusercontent.com": [
+      "Trackplus"
+    ],
+    "thd.cc": [
+      "mSpy"
+    ],
+    "theodoi24h.com": [
+      "KidsShield"
+    ],
+    "thetruth-db94a.firebaseio.com": [
+      "TheTruthSpy"
+    ],
+    "thiefguardbd.com": [
+      "AbsoluTrack"
+    ],
+    "tispy.net": [
+      "KidsShield"
+    ],
+    "topzaloha.cz": [
+      "NexSpy"
+    ],
+    "tos-assigned-build.sfo2.digitaloceanspaces.com": [
+      "TheOneSpy"
+    ],
+    "tphmr.com": [
+      "PhoneMonitor"
+    ],
+    "tr.appmia.com": [
+      "AppMia"
+    ],
+    "traccar-client-app.firebaseio.com": [
+      "Traccar"
+    ],
+    "traccar.org": [
+      "Traccar"
+    ],
+    "trackier.vip": [
+      "Cocospy"
+    ],
+    "trackine.vip": [
+      "Cocospy"
+    ],
+    "tracking-smartphone.firebaseio.com": [
+      "TrackingSmartphone"
+    ],
+    "tracking.mliteapp.com": [
+      "mSpy"
+    ],
+    "tracking.mspyonline.com": [
+      "mSpy"
+    ],
+    "trackingsmartphone.com": [
+      "TrackingSmartphone"
+    ],
+    "trackji.com": [
+      "Trackji"
+    ],
+    "trackmy.mobi": [
+      "EasyPhoneTrack"
+    ],
+    "trackmyphones-pro.firebaseio.com": [
+      "TrackMyPhones"
+    ],
+    "trackmyphones.com": [
+      "TrackMyPhones"
+    ],
+    "trackpro.vip": [
+      "Cocospy"
+    ],
+    "tracksp-7743c.firebaseio.com": [
+      "AiSpyer"
+    ],
+    "tracksp.in": [
+      "AiSpyer"
+    ],
+    "trackview.net": [
+      "TrackView"
+    ],
+    "trkps.com": [
+      "FlexiSpy"
+    ],
+    "true-truck-86810.firebaseio.com": [
+      "XNSpy"
+    ],
+    "truewebmedia.com": [
+      "pcTattletale"
+    ],
+    "ttjj.ga": [
+      "jjspy"
+    ],
+    "ttjj.ml": [
+      "jjspy"
+    ],
+    "ttjj.tk": [
+      "jjspy"
+    ],
+    "ttspy.com": [
+      "jjspy"
+    ],
+    "ttspy.net": [
+      "jjspy"
+    ],
+    "ttspy.top": [
+      "jjspy"
+    ],
+    "tun-cos-1258344701.file.myqcloud.com": [
+      "Msafely"
+    ],
+    "u1.panspy.com": [
+      "PanSpy"
+    ],
+    "ua.brunoespiao.com.br": [
+      "BrunoEspiao"
+    ],
+    "ua.evaspy.com": [
+      "EvaSpy"
+    ],
+    "ua.tispy.net": [
+      "KidsShield"
+    ],
+    "ub.evaspy.com": [
+      "EvaSpy"
+    ],
+    "uc.evaspy.com": [
+      "EvaSpy"
+    ],
+    "ud.evaspy.com": [
+      "EvaSpy"
+    ],
+    "ue.brunoespiao.com.br": [
+      "BrunoEspiao"
+    ],
+    "ue.evaspy.com": [
+      "EvaSpy"
+    ],
+    "ue.maglook.eu": [
+      "MagMonitor"
+    ],
+    "uf.brunoespiao.com.br": [
+      "BrunoEspiao"
+    ],
+    "uf.evaspy.com": [
+      "EvaSpy"
+    ],
+    "uf.maglook.eu": [
+      "MagMonitor"
+    ],
+    "uf1.brunoespiao.com.br": [
+      "BrunoEspiao"
+    ],
+    "ug.evaspy.com": [
+      "EvaSpy"
+    ],
+    "ug1c5v.birxpk.com": [
+      "MobileTool"
+    ],
+    "uh.evaspy.com": [
+      "EvaSpy"
+    ],
+    "ui.evaspy.com": [
+      "EvaSpy"
+    ],
+    "uj.evaspy.com": [
+      "EvaSpy"
+    ],
+    "uk.evaspy.com": [
+      "EvaSpy"
+    ],
+    "ul.evaspy.com": [
+      "EvaSpy"
+    ],
+    "um.evaspy.com": [
+      "EvaSpy"
+    ],
+    "un.evaspy.com": [
+      "EvaSpy"
+    ],
+    "unisafe-a342f.firebaseio.com": [
+      "Unisafe"
+    ],
+    "uo.evaspy.com": [
+      "EvaSpy"
+    ],
+    "up.evaspy.com": [
+      "EvaSpy"
+    ],
+    "update-service-7e59f.firebaseio.com": [
+      "mSpy"
+    ],
+    "upload.weiguanai.cn": [
+      "jjspy"
+    ],
+    "uq.evaspy.com": [
+      "EvaSpy"
+    ],
+    "ur.brunoespiao.com.br": [
+      "BrunoEspiao"
+    ],
+    "ur.evaspy.com": [
+      "EvaSpy"
+    ],
+    "ur.spyone.pl": [
+      "Spyone"
+    ],
+    "us-central1-api-project-285519687053.cloudfunctions.net": [
+      "TrackView"
+    ],
+    "us-central1-catwatchful-e03b8.cloudfunctions.net": [
+      "CatWatchful"
+    ],
+    "us.umobix.com": [
+      "uMobix"
+    ],
+    "usafe-ca594.firebaseio.com": [
+      "Unisafe"
+    ],
+    "usafe.ru": [
+      "Unisafe"
+    ],
+    "user.ownspy.es": [
+      "OwnSpy"
+    ],
+    "user.trackview.net": [
+      "TrackView"
+    ],
+    "user2.trackview.net": [
+      "TrackView"
+    ],
+    "users.awosoft.com": [
+      "iKeyMonitor"
+    ],
+    "users.easemon.com": [
+      "iKeyMonitor"
+    ],
+    "users.thephonem.com": [
+      "PhoneMonitor"
+    ],
+    "v4vw4ytvo4.execute-api.us-east-2.amazonaws.com": [
+      "Spyier"
+    ],
+    "video-recorder-c0419.firebaseio.com": [
+      "TrackMyPhones"
+    ],
+    "viewer.snoopza.com": [
+      "Snoopza"
+    ],
+    "viptelefonprogrami.com": [
+      "KidsShield"
+    ],
+    "viptrack.pro": [
+      "Cocospy"
+    ],
+    "virsis.net": [
+      "HelloSpy"
+    ],
+    "vkur.se": [
+      "Reptilicus"
+    ],
+    "vkur1.se": [
+      "Reptilicus"
+    ],
+    "vys.me": [
+      "MobiStealth"
+    ],
+    "waws-prod-blu-247-e7b3.eastus.cloudapp.azure.com": [
+      "EasyLogger"
+    ],
+    "waws-prod-blu-247.sip.azurewebsites.windows.net": [
+      "EasyLogger"
+    ],
+    "web.chyldmonitor.com": [
+      "OneSpy"
+    ],
+    "webrtc.thd.cc": [
+      "mSpy"
+    ],
+    "webservicesdb.mobiispy.com": [
+      "HelloSpy"
+    ],
+    "webwatcher-child-app.firebaseio.com": [
+      "WebWatcher"
+    ],
+    "webwatcherdata.com": [
+      "WebWatcher"
+    ],
+    "webwatchernow.com": [
+      "WebWatcher"
+    ],
+    "wethnc067.xyz": [
+      "MobileTool"
+    ],
+    "where-is-my-children.firebase.io": [
+      "FindMyKids"
+    ],
+    "win.spynger.net": [
+      "Spynger"
+    ],
+    "wmdcommander.appspot.com": [
+      "WheresMyDroid"
+    ],
+    "wppspy.tech": [
+      "XNSpy"
+    ],
+    "ws.ttspy.com": [
+      "jjspy"
+    ],
+    "wss.findmykids.org": [
+      "FindMyKids"
+    ],
+    "www.11111.pl": [
+      "Spyone"
+    ],
+    "www.android-monitor.ru": [
+      "AndroidPolice"
+    ],
+    "www.androidlost.com": [
+      "AndroidLost"
+    ],
+    "www.apk7.biz": [
+      "Tracku"
+    ],
+    "www.app-spy.com": [
+      "SpyPhoneApp"
+    ],
+    "www.bark.us": [
+      "bark"
+    ],
+    "www.brunoespiao.com.br": [
+      "BrunoEspiao"
+    ],
+    "www.cellmonitoring.co": [
+      "PhoneSheriff"
+    ],
+    "www.cerberusapp.com": [
+      "Cerberus"
+    ],
+    "www.e-spy.org": [
+      "Tracku"
+    ],
+    "www.einformatiks.com": [
+      "MobiStealth"
+    ],
+    "www.imonitorsoft.cn": [
+      "iMonitorSpy"
+    ],
+    "www.imonitorsoft.com": [
+      "iMonitorSpy"
+    ],
+    "www.ioi.life": [
+      "AiSpyer"
+    ],
+    "www.maglook.eu": [
+      "MagMonitor"
+    ],
+    "www.msafe.xyz": [
+      "Tracku"
+    ],
+    "www.mspy.com": [
+      "mSpy"
+    ],
+    "www.mspyonline.com": [
+      "mSpy"
+    ],
+    "www.mtoolapp.net": [
+      "MobileTool"
+    ],
+    "www.mydwnd.com": [
+      "XNSpy"
+    ],
+    "www.pgv4.com": [
+      "SpyApp"
+    ],
+    "www.reptilicus.net": [
+      "Reptilicus"
+    ],
+    "www.sentrypc.download": [
+      "SentryPC"
+    ],
+    "www.sentrypc.net": [
+      "SentryPC"
+    ],
+    "www.sentrypconline.com": [
+      "SentryPC"
+    ],
+    "www.shadow-logs.com": [
+      "ShadowSpy"
+    ],
+    "www.shadyspy.com": [
+      "ShadySpy"
+    ],
+    "www.spappmonitoring.com": [
+      "SpyPhoneApp"
+    ],
+    "www.spclogs.com": [
+      "SentryPC"
+    ],
+    "www.spy-datacenter.com": [
+      "EasyPhoneTrack"
+    ],
+    "www.spy-phone-app.com": [
+      "SpyPhoneApp"
+    ],
+    "www.spyhide.com": [
+      "HelloSpy"
+    ],
+    "www.spyhide.ir": [
+      "HelloSpy"
+    ],
+    "www.spyzie.com": [
+      "Cocospy"
+    ],
+    "www.trackmyphones.com": [
+      "TrackMyPhones"
+    ],
+    "www.ttjj.tk": [
+      "jjspy"
+    ],
+    "www.vys.me": [
+      "MobiStealth"
+    ],
+    "www.webwatchernow.com": [
+      "WebWatcher"
+    ],
+    "wx.weiguanai.cn": [
+      "jjspy"
+    ],
+    "x.pgv4.com": [
+      "SpyApp"
+    ],
+    "x1panel.com": [
+      "MonitorUltra"
+    ],
+    "xmyevq.birxpk.com": [
+      "MobileTool"
+    ],
+    "xnore.com": [
+      "Xnore"
+    ],
+    "xnspy.com": [
+      "XNSpy"
+    ],
+    "xpcpanel.com": [
+      "MonitorUltra"
+    ],
+    "zdalnakontrola.pl": [
+      "LetMeSpy"
+    ]
+  },
+  "ipv4": {
+    "103.147.225.210": [
+      "PhoneSpy"
+    ],
+    "104.18.54.129": [
+      "iKeyMonitor"
+    ],
+    "104.18.55.129": [
+      "iKeyMonitor"
+    ],
+    "104.236.73.120": [
+      "Hoverwatch"
+    ],
+    "104.25.169.109": [
+      "iKeyMonitor"
+    ],
+    "104.25.170.109": [
+      "iKeyMonitor"
+    ],
+    "104.25.28.15": [
+      "EasyLogger"
+    ],
+    "104.25.29.15": [
+      "EasyLogger"
+    ],
+    "104.26.14.56": [
+      "iKeyMonitor"
+    ],
+    "104.26.15.56": [
+      "iKeyMonitor"
+    ],
+    "108.178.9.124": [
+      "SentryPC"
+    ],
+    "119.8.35.235": [
+      "FlexiSpy"
+    ],
+    "138.201.32.118": [
+      "Spy24"
+    ],
+    "139.59.125.208": [
+      "Trackplus"
+    ],
+    "149.56.26.44": [
+      "Hoverwatch"
+    ],
+    "158.69.24.236": [
+      "Hoverwatch"
+    ],
+    "162.144.212.52": [
+      "Xnore"
+    ],
+    "162.144.75.253": [
+      "CatWatchful"
+    ],
+    "167.114.114.207": [
+      "AppSpy"
+    ],
+    "167.71.189.163": [
+      "TheWiSpy"
+    ],
+    "172.67.194.85": [
+      "iKeyMonitor"
+    ],
+    "172.67.73.2": [
+      "iKeyMonitor"
+    ],
+    "172.67.81.216": [
+      "EasyLogger"
+    ],
+    "172.67.82.183": [
+      "iKeyMonitor"
+    ],
+    "175.126.146.147": [
+      "PhoneSpy"
+    ],
+    "176.9.42.16": [
+      "Reptilicus"
+    ],
+    "178.33.203.110": [
+      "AndroidMonitor"
+    ],
+    "178.62.59.165": [
+      "Snoopza"
+    ],
+    "184.154.69.210": [
+      "RealtimeSpy"
+    ],
+    "185.2.103.130": [
+      "MonitorUltra"
+    ],
+    "185.87.51.116": [
+      "Trackplus"
+    ],
+    "188.130.241.205": [
+      "Hoverwatch"
+    ],
+    "198.100.150.203": [
+      "Hoverwatch"
+    ],
+    "199.38.181.70": [
+      "FreeAndroidSpy"
+    ],
+    "201.33.21.62": [
+      "eagleSPY"
+    ],
+    "213.239.228.196": [
+      "SpyHuman"
+    ],
+    "217.182.176.52": [
+      "FreeAndroidSpy"
+    ],
+    "217.182.250.165": [
+      "Snoopza"
+    ],
+    "37.120.162.163": [
+      "MobileSpy"
+    ],
+    "45.114.224.147": [
+      "CatWatchful"
+    ],
+    "45.40.135.228": [
+      "CallSMSTracker"
+    ],
+    "45.79.149.154": [
+      "ShadySpy"
+    ],
+    "46.105.57.148": [
+      "Snoopza"
+    ],
+    "46.40.125.240": [
+      "FreeAndroidSpy"
+    ],
+    "47.252.23.40": [
+      "MyCellSpy"
+    ],
+    "47.88.63.70": [
+      "ClevGuard"
+    ],
+    "50.28.38.175": [
+      "EasyPhoneTrack"
+    ],
+    "51.15.183.209": [
+      "MobileTrackerFree"
+    ],
+    "52.22.130.9": [
+      "KidsShield"
+    ],
+    "52.90.126.68": [
+      "Spylix"
+    ],
+    "67.227.193.142": [
+      "pcTattletale"
+    ],
+    "69.64.74.239": [
+      "TheTruthSpy"
+    ],
+    "69.64.81.166": [
+      "TheTruthSpy"
+    ],
+    "69.64.81.49": [
+      "TheTruthSpy"
+    ],
+    "69.64.81.98": [
+      "TheTruthSpy"
+    ],
+    "69.64.91.29": [
+      "TheTruthSpy"
+    ],
+    "78.46.34.14": [
+      "TalkLog"
+    ],
+    "78.47.16.3": [
+      "HelloSpy"
+    ],
+    "80.241.216.14": [
+      "MonitorUltra"
+    ],
+    "85.13.206.195": [
+      "TheOneSpy"
+    ],
+    "85.13.218.229": [
+      "TheOneSpy"
+    ],
+    "89.33.190.8": [
+      "VIPTrack"
+    ],
+    "91.121.70.22": [
+      "SpyMasterPro"
+    ],
+    "91.196.212.201": [
+      "LetMeSpy"
+    ],
+    "91.196.212.202": [
+      "LetMeSpy"
+    ]
+  },
+  "urls": {
+    "github.com/earthshakira/android_hack": [
+      "Buhsam"
+    ],
+    "github.com/karma9874/androrat": [
+      "AndroRat"
+    ]
+  }
+}
