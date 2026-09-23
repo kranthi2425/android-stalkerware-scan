@@ -99,8 +99,9 @@ class IOSScannerTests(unittest.TestCase):
         self.assertEqual(f[dom]['evidence'][0]['source'],'Safari history'); self.assertTrue(f[dom]['evidence'][0]['first_visit'].startswith('2025'))
         self.assertEqual(f[dom2]['evidence'][0]['direction'],'received')
 
-    def test_encrypted_backup_is_refused(self):
-        with self.assertRaises(ios.BackupError): ios.Backup(make_backup(self.dir/'enc',encrypted=True))
+    def test_encrypted_flag_with_readable_manifest_is_treated_as_already_decrypted(self):
+        b=ios.Backup(make_backup(self.dir/'enc',encrypted=True))
+        self.assertTrue(b.encrypted); self.assertIn('already decrypted',b.decryption)
 
     def test_parent_folder_with_single_backup(self):
         make_backup(self.dir/'MobileSync'/'00008110-TEST')
