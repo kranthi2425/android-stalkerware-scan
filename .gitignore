@@ -3,3 +3,5 @@ __pycache__/
 report.txt
 report.json
 evidence/
+report_ios.txt
+report_ios.json
