@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-"""Defensive, read-only iPhone stalkerware triage over an unencrypted iTunes/Finder backup.
+"""Defensive, read-only iPhone stalkerware triage over an iTunes/Finder backup or a full filesystem dump.
 
-Pure Python standard library. Nothing on the phone or in the backup is modified.
+Pure Python standard library for unencrypted backups and filesystem dumps. Encrypted backups need one
+optional AES package (cryptography or pycryptodome); see ios_crypto.py. Nothing on the phone, in the
+backup, or in the dump is modified.
 """
 from __future__ import annotations
-import argparse, datetime as dt, ipaddress, json, plistlib, re, sqlite3, sys
+import argparse, datetime as dt, getpass, ipaddress, json, os, plistlib, re, shutil, sqlite3, struct, sys, tempfile
 from pathlib import Path
 from urllib.parse import urlsplit
 
 from scanner import severity
+import ios_crypto
 
 ROOT = Path(__file__).resolve().parent
 APPLE_EPOCH = dt.datetime(2001, 1, 1, tzinfo=dt.timezone.utc)
@@ -48,14 +51,25 @@ ACCOUNT_HYGIENE = [
     'Apple Personal Safety guide: https://support.apple.com/guide/personal-safety/safety-check-iphone-ios-16-ips2aad835e1/web',
 ]
 LIMITATIONS = [
-    'Reads unencrypted backups only in this version. Encrypted backups are refused, not guessed at.',
+    'Encrypted backups need the backup password and one optional package (cryptography or pycryptodome). The few files the scan reads are decrypted into a private temporary folder that is deleted when the scan ends.',
+    'App matches are dual-use: family, parental, couple, and anti-theft apps are usually installed knowingly and for good reasons. The curated list covers known App Store apps only; renamed, new, or enterprise-signed apps can be missed.',
+    'Standard backups normally do not contain provisioning profiles or app bundles, so enterprise and sideloading traces are mostly visible only with --fs-dump.',
+    'Getting a full filesystem dump usually means jailbreaking the phone first. With --fs-dump, jailbreak traces may come from the acquisition itself; ask whoever made the dump which tool they used.',
     'A standard backup does not contain the system partition, so most jailbreak files are only visible as app data, preferences, or leftovers.',
     'Network indicators are matched only against Safari history and message text stored in the backup, not live traffic or other apps.',
-    'Apple notes that unencrypted backups can leave out website history, call history, saved passwords, Wi-Fi settings, and Health data (https://support.apple.com/en-us/108353). If "network_iocs" shows safari_databases=0, browsing history was not checked.',
+    'Apple notes that unencrypted backups can leave out website history, call history, saved passwords, Wi-Fi settings, and Health data (https://support.apple.com/en-us/108353); encrypted backups include them. If "network_iocs" shows safari_databases=0, browsing history was not checked.',
     'Public indicator lists age quickly. See iocs/ for the pinned snapshot dates.',
 ]
 
+MVT_DOCS = ['https://docs.mvt.re/en/latest/ios/backup/check/', 'https://docs.mvt.re/en/latest/ios/filesystem/check/', 'https://docs.mvt.re/en/latest/iocs/']
+SQLITE_MAGIC = b'SQLite format 3\x00'
+
 class BackupError(Exception): pass
+
+def is_sqlite(path):
+    try:
+        with open(path, 'rb') as fh: return fh.read(16) == SQLITE_MAGIC
+    except OSError: return False
 
 def load_plist(path):
     try:
@@ -75,7 +89,9 @@ def apple_time(value):
     except OverflowError: return None
 
 class Backup:
-    def __init__(self, path):
+    kind = 'backup'
+
+    def __init__(self, path, password=None, password_prompt=None):
         p = Path(path).expanduser()
         if not (p / 'Manifest.db').exists():
             subs = [d for d in p.iterdir() if d.is_dir() and (d / 'Manifest.db').exists()] if p.is_dir() else []
@@ -85,19 +101,102 @@ class Backup:
         self.path = p
         self.info = load_plist(p / 'Info.plist') or {}
         self.manifest = load_plist(p / 'Manifest.plist') or {}
-        if self.manifest.get('IsEncrypted'):
-            raise BackupError('This backup is encrypted. This version reads unencrypted backups only. See README "Make a backup" for options.')
+        self.encrypted = bool(self.manifest.get('IsEncrypted'))
+        self.decryption = 'not encrypted'
+        self._tmp = self._aes = self._keybag = None; self._records = {}; self._plain = {}
+        db = p / 'Manifest.db'
+        if self.encrypted and is_sqlite(db):
+            self.decryption = 'already decrypted (Manifest.db is readable; for example a decrypted copy made with another tool)'
+        elif self.encrypted:
+            db = self._unlock(password if password is not None else (password_prompt() if password_prompt else None))
         try:
-            con = ro_connect(p / 'Manifest.db')
-            self.files = [{'file_id': r[0], 'domain': r[1] or '', 'path': r[2] or '', 'flags': r[3]}
-                          for r in con.execute('SELECT fileID, domain, relativePath, flags FROM Files')]
+            con = ro_connect(db)
+            rows = con.execute('SELECT fileID, domain, relativePath, flags' + (', file' if self._keybag else '') + ' FROM Files').fetchall()
             con.close()
         except sqlite3.DatabaseError as e:
+            self.close()
             raise BackupError(f'Manifest.db could not be read ({e}). The backup may be encrypted, incomplete, or damaged.')
+        self.files = [{'file_id': r[0], 'domain': r[1] or '', 'path': r[2] or '', 'flags': r[3]} for r in rows]
+        if self._keybag: self._records = {r[0]: r[4] for r in rows if r[4]}
 
-    def blob(self, file_id):
+    def _unlock(self, password):
+        try: self._aes = ios_crypto.AES()
+        except ios_crypto.CryptoUnavailable as e: raise BackupError('This backup is encrypted. ' + str(e))
+        if not password: raise BackupError('This backup is encrypted. Run again and enter the backup password when asked (or set IOS_BACKUP_PASSWORD).')
+        try:
+            self._keybag = ios_crypto.Keybag(self.manifest['BackupKeyBag'])
+            self._keybag.unlock(self._aes, password)
+            mk = self.manifest['ManifestKey']
+            key = self._keybag.unwrap(self._aes, struct.unpack('<l', mk[:4])[0], mk[4:])
+        except ios_crypto.WrongPassword: raise BackupError('Wrong backup password. It is the password set for encrypted backups in Finder/iTunes, not the phone passcode.')
+        except (KeyError, ValueError, TypeError) as e: raise BackupError(f'Encrypted backup keys could not be read ({e}). The backup may be damaged or from an unsupported iOS version.')
+        self._tmp = Path(tempfile.mkdtemp(prefix='ios-scan-'))
+        out = self._tmp / 'Manifest.db'
+        ios_crypto.decrypt_stream(self._aes, key, self.path / 'Manifest.db', out)
+        if not is_sqlite(out):
+            self.close(); raise BackupError('Manifest.db did not decrypt to a database. The backup may be damaged or use an unsupported format.')
+        self.decryption = f'decrypted by this tool ({self._aes.name}); temporary copies deleted after the scan'
+        return out
+
+    def close(self):
+        if self._tmp: shutil.rmtree(self._tmp, ignore_errors=True); self._tmp = None
+
+    def __enter__(self): return self
+    def __exit__(self, *a): self.close()
+
+    def _raw(self, file_id):
         f = self.path / file_id[:2] / file_id
         return f if f.exists() else (self.path / file_id if (self.path / file_id).exists() else None)
+
+    def blob(self, file_id):
+        raw = self._raw(file_id)
+        if not self._keybag or not raw: return raw
+        if file_id in self._plain: return self._plain[file_id]
+        rec = self._records.get(file_id); out = None
+        try:
+            cls, wrapped, size = ios_crypto.file_record(rec) if rec else (None, None, 0)
+            if wrapped:
+                out = self._tmp / file_id
+                ios_crypto.decrypt_stream(self._aes, self._keybag.unwrap(self._aes, cls, wrapped), raw, out, size)
+        except Exception: out = None  # unreadable entry: treated like a missing file
+        self._plain[file_id] = out
+        return out
+
+    def path_hits(self, patterns):
+        for f in self.files:
+            p = _norm(device_path(f))
+            for pat, name in patterns:
+                if p == pat or p.startswith(pat + '/'): yield device_path(f), name
+
+    def app_details(self):
+        """Per-app metadata from Manifest.plist and Info.plist, keyed by bundle ID."""
+        out = {bid: {'bundle_id': bid, 'seen_in': []} for bid in self.apps()}
+        for bid, meta in (self.manifest.get('Applications', {}) or {}).items():
+            d = out.setdefault(bid, {'bundle_id': bid, 'seen_in': []}); d['seen_in'].append('Manifest.plist')
+            if isinstance(meta, dict):
+                if meta.get('CFBundleVersion'): d['version'] = str(meta['CFBundleVersion'])
+                if isinstance(meta.get('Path'), str) and meta['Path'].endswith('.app'): d['name'] = meta['Path'].rsplit('/', 1)[-1][:-4]
+        for bid in self.info.get('Installed Applications', []) or []:
+            out.setdefault(bid, {'bundle_id': bid, 'seen_in': []})['seen_in'].append('Info.plist')
+        for bid, meta in (self.info.get('Applications', {}) or {}).items():
+            d = out.setdefault(bid, {'bundle_id': bid, 'seen_in': []})
+            md = meta.get('iTunesMetadata') if isinstance(meta, dict) else None
+            try: md = plistlib.loads(md) if isinstance(md, (bytes, bytearray)) else md
+            except Exception: md = None
+            if isinstance(md, dict):
+                if md.get('itemName'): d['name'] = str(md['itemName'])
+                if md.get('artistName'): d['developer'] = str(md['artistName'])
+        for f in self.files:
+            if f['domain'].startswith('AppDomain-'):
+                d = out.get(f['domain'][10:])
+                if d is not None and 'app data container' not in d['seen_in']: d['seen_in'].append('app data container')
+        for d in out.values(): d['seen_in'] = sorted(set(d['seen_in']))
+        return out
+
+    def source_info(self):
+        return {'type': 'backup', 'path': str(self.path), 'encrypted': self.encrypted, 'decryption': self.decryption,
+                'last_backup': str(self.info.get('Last Backup Date', 'unknown')), 'manifest_entries': len(self.files),
+                'note': 'Only data stored in this backup was examined. Nothing on the phone or in the backup was changed.'}
 
     def find(self, domain=None, path=None, suffix=None):
         return [f for f in self.files if (domain is None or f['domain'] == domain)
@@ -117,6 +216,86 @@ class Backup:
                 'name': self.info.get('Device Name') or lock.get('DeviceName') or 'unknown',
                 'serial': self.info.get('Serial Number') or lock.get('SerialNumber') or 'unknown'}
 
+class FilesystemDump:
+    """A full filesystem dump (extracted folder or mount point). Reads only a targeted set of paths."""
+    kind = 'filesystem_dump'
+    encrypted = False
+
+    def __init__(self, path):
+        p = Path(path).expanduser()
+        if (p / 'private' / 'var').is_dir(): self.var, self.sysroot = p / 'private' / 'var', p
+        elif (p / 'var' / 'mobile').is_dir(): self.var, self.sysroot = p / 'var', None  # dump of /private only
+        else: raise BackupError(f'No private/var folder in {p}. Point --fs-dump at the root of an extracted iPhone filesystem dump.')
+        self.path = p; self.info = {}; self.manifest = {}; self._apps = None
+        self.files = []
+        add = lambda real, domain, rel: self.files.append({'file_id': str(real), 'domain': domain, 'path': rel, 'flags': 1, 'device_path': self._dev(real)})
+        mob = self.var / 'mobile'
+        for rel in ('Library/SMS/sms.db', 'Library/Safari/History.db'):
+            if (mob / rel).is_file(): add(mob / rel, 'HomeDomain', rel)
+        for f in sorted(self.var.glob('mobile/Containers/Data/Application/*/Library/Safari/History.db')): add(f, '', 'Library/Safari/History.db')
+        for d in sorted(self.var.glob('containers/Shared/SystemGroup/*/Library/ConfigurationProfiles')) + [mob / 'Library/ConfigurationProfiles']:
+            if d.is_dir():
+                for f in sorted(d.iterdir()):
+                    if f.is_file(): add(f, PROFILES_DOMAIN, 'Library/ConfigurationProfiles/' + f.name)
+        for f in sorted(self.var.glob('MobileDevice/ProvisioningProfiles/*.mobileprovision')): add(f, '', 'MobileDevice/ProvisioningProfiles/' + f.name)
+
+    def _dev(self, real):
+        real = Path(real)
+        for base, prefix in ((self.var, '/private/var/'), (self.var.parent, '/private/'), (self.sysroot, '/')):
+            if base is None: continue
+            try: return prefix + real.relative_to(base).as_posix()
+            except ValueError: continue
+        return str(real)
+
+    def blob(self, file_id):
+        f = Path(file_id)
+        return f if f.is_file() else None
+
+    def find(self, domain=None, path=None, suffix=None):
+        return [f for f in self.files if (domain is None or f['domain'] == domain)
+                and (path is None or f['path'] == path) and (suffix is None or f['path'].endswith(suffix))]
+
+    def path_hits(self, patterns):
+        for pat, name in patterns:
+            if pat.startswith('/var/'): cands = [self.var / pat[5:]]
+            else: cands = [self.var.parent / pat.lstrip('/')] + ([self.sysroot / pat.lstrip('/')] if self.sysroot is not None else [])
+            for real in cands:
+                if real.exists() or real.is_symlink(): yield self._dev(real), name; break
+
+    def app_details(self):
+        if self._apps is not None: return self._apps
+        out = {}
+        bundles = sorted(self.var.glob('containers/Bundle/Application/*/*.app'))
+        if self.sysroot is not None: bundles += sorted((self.sysroot / 'Applications').glob('*.app'))
+        for app in bundles:
+            info = load_plist(app / 'Info.plist')
+            if not isinstance(info, dict) or not info.get('CFBundleIdentifier'): continue
+            bid = str(info['CFBundleIdentifier'])
+            d = out.setdefault(bid, {'bundle_id': bid, 'seen_in': []})
+            d['name'] = str(info.get('CFBundleDisplayName') or info.get('CFBundleName') or app.name[:-4])
+            if info.get('CFBundleShortVersionString') or info.get('CFBundleVersion'): d['version'] = str(info.get('CFBundleShortVersionString') or info.get('CFBundleVersion'))
+            d['bundle_path'] = self._dev(app); d['seen_in'] = ['app bundle']
+            d['app_store_metadata'] = (app.parent / 'iTunesMetadata.plist').is_file()
+            if (app / 'embedded.mobileprovision').is_file(): d['embedded_profile'] = str(app / 'embedded.mobileprovision')
+        self._apps = out
+        return out
+
+    def apps(self): return set(self.app_details())
+
+    def device(self):
+        v = load_plist(self.sysroot / 'System/Library/CoreServices/SystemVersion.plist') if self.sysroot is not None else None
+        v = v if isinstance(v, dict) else {}
+        return {'model': 'unknown', 'ios': str(v.get('ProductVersion', 'unknown')), 'name': 'unknown', 'serial': 'unknown'}
+
+    def source_info(self):
+        return {'type': 'filesystem_dump', 'path': str(self.path), 'encrypted': False, 'decryption': 'not applicable',
+                'last_backup': 'n/a (filesystem dump)', 'manifest_entries': len(self.files),
+                'note': 'Only a targeted set of paths in this filesystem dump was read. Nothing in the dump was changed.'}
+
+    def close(self): pass
+    def __enter__(self): return self
+    def __exit__(self, *a): pass
+
 def finding(check, indicator, score, reasons, evidence=None, families=None):
     return {'check': check, 'indicator': indicator, 'score': score, 'severity': severity(score),
             'reasons': reasons, 'families': sorted(families or []), 'evidence': evidence or []}
@@ -124,6 +303,7 @@ def finding(check, indicator, score, reasons, evidence=None, families=None):
 # ---------- check 1: jailbreak artifacts ----------
 
 def device_path(f):
+    if f.get('device_path'): return f['device_path']
     root = DOMAIN_ROOTS.get(f['domain'])
     return f"{root}/{f['path']}" if root else f"{f['domain']}/{f['path']}"
 
@@ -142,11 +322,8 @@ def check_jailbreak(backup, data):
                  or f['path'].rsplit('/', 1)[-1] in (bid + '.plist',) or f['path'].rstrip('/').endswith('/' + bid)]
         if seen: hits.setdefault(meta['name'], {'kind': meta['kind'], 'evidence': []})['evidence'] += seen
     patterns = [(_norm(x['path']), x['tool']) for x in data['paths']]
-    for f in backup.files:
-        p = _norm(device_path(f))
-        for pat, name in patterns:
-            if p == pat or p.startswith(pat + '/'):
-                hits.setdefault(name, {'kind': 'path', 'evidence': []})['evidence'].append(device_path(f))
+    for dev, name in backup.path_hits(patterns):
+        hits.setdefault(name, {'kind': 'path', 'evidence': []})['evidence'].append(dev)
     out = []
     multi = len(hits) >= 2  # distinct tools, so one app plus its own leftovers counts once
     for name, h in sorted(hits.items()):
@@ -305,6 +482,112 @@ def check_network(backup, data):
                  'message_databases': m_db, 'messages_checked': m_rows,
                  'indicators': {k: len(v) for k, v in (('domains', iocs.domains), ('ipv4', iocs.ipv4), ('urls', iocs.urls))}}
 
+# ---------- check 4: installed apps and dual-use app matcher ----------
+
+def check_apps(backup, data):
+    apps = backup.app_details()
+    cats, roles, curated = data['categories'], data['roles'], data['apps']
+    out = []
+    for bid in sorted(apps):
+        meta = curated.get(bid)
+        if not meta: continue
+        score = 40
+        reasons = [f"Dual-use app installed: {meta['name']} by {meta['developer']} ({meta['category'].replace('_', ' ')}). {cats[meta['category']]}",
+                   f"Role: {roles[meta['role']]}"]
+        if meta['role'] == 'monitoring_device':
+            score = 30; reasons.append('This is usually the watching side, so on this phone it more often means this phone watches someone else. Check which account is signed in.')
+        if meta['category'] == 'monitoring_marketed':
+            score = 50; reasons.append('The developer markets it for monitoring another person.')
+        if meta.get('echap_family'):
+            score = 50; reasons.append(f"The same brand or its servers appear in the Echap stalkerware indicators (family: {meta['echap_family']}).")
+        reasons.append('Not a verdict. Many people install this knowingly. Ask: did I install it, and do I know who can see what it collects?')
+        a = apps[bid]
+        ev = [{'bundle_id': bid, 'name_on_phone': a.get('name'), 'seen_in': ', '.join(a.get('seen_in', [])), 'app_store_record': meta['source']}]
+        out.append(finding('dual_use_app', bid, score, reasons, ev, [meta['category']]))
+    return out, {'status': 'ran' if apps else 'no app list in backup', 'apps_listed': len(apps),
+                 'curated_apps_checked': len(curated), 'list_version': data.get('version')}
+
+# ---------- check 5: enterprise / provisioning profile traces ----------
+
+def parse_provision(raw):
+    """Read the plist inside a CMS-signed .mobileprovision without verifying the signature."""
+    i, j = raw.find(b'<?xml'), raw.rfind(b'</plist>')
+    if i < 0 or j < 0: return None
+    try: pl = plistlib.loads(raw[i:j + 8])
+    except Exception: return None
+    return pl if isinstance(pl, dict) else None
+
+def provision_type(pl):
+    ent = pl.get('Entitlements') or {}
+    if pl.get('ProvisionsAllDevices'): return 'enterprise'
+    if pl.get('ProvisionedDevices'): return 'development' if ent.get('get-task-allow') else 'ad_hoc'
+    return 'app_store'
+
+PROVISION_TEXT = {
+    'enterprise': (45, 'In-house (enterprise) signing profile: lets apps install outside the App Store on any iPhone. Apple limits this to a company\'s own staff apps. Malware has been spread to iPhones this way (for example WireLurker and YiSpecter).'),
+    'ad_hoc': (35, 'Ad hoc signing profile: lets an app outside the App Store run on a short list of specific iPhones, including this one.'),
+    'development': (30, 'Developer signing profile: lets a test app run on specific iPhones. Normal if the owner builds apps; unusual otherwise.'),
+}
+
+def check_provisioning(backup):
+    sources = [(device_path(f), backup.blob(f['file_id'])) for f in backup.files if f['path'].endswith('.mobileprovision')]
+    apps = backup.app_details()
+    for bid, a in sorted(apps.items()):
+        if a.get('embedded_profile'): sources.append((a['bundle_path'] + '/embedded.mobileprovision', Path(a['embedded_profile'])))
+    out, parsed = [], 0
+    for where, blob in sources:
+        if not blob: continue
+        try: pl = parse_provision(Path(blob).read_bytes())
+        except OSError: pl = None
+        if not pl: continue
+        parsed += 1
+        kind = provision_type(pl)
+        if kind == 'app_store': continue
+        score, why = PROVISION_TEXT[kind]
+        appid = str((pl.get('Entitlements') or {}).get('application-identifier', ''))
+        team = pl.get('TeamName') or 'unknown team'
+        reasons = [f'{why} Team: {team}.']
+        target = appid.split('.', 1)[1] if '.' in appid else ''
+        linked = sorted(b for b in apps if target and (b == target or (target.endswith('*') and b.startswith(target[:-1]))))
+        if linked: reasons.append('Signs installed app(s): ' + ', '.join(linked))
+        ev = [{'file': where, 'profile_name': pl.get('Name'), 'team': team, 'team_id': ','.join(pl.get('TeamIdentifier') or []),
+               'app_id': appid, 'devices': 'all' if kind == 'enterprise' else len(pl.get('ProvisionedDevices') or []),
+               'created': pl.get('CreationDate'), 'expires': pl.get('ExpirationDate')}]
+        f = finding('provisioning_profile', str(pl.get('UUID') or pl.get('Name') or where), score, reasons, ev)
+        f['profile_type'] = kind
+        out.append(f)
+    status = 'ran' if sources else ('no provisioning profiles in backup (standard backups usually leave them out; --fs-dump sees more)' if backup.kind == 'backup' else 'no provisioning profiles found')
+    return out, {'status': status, 'profiles_found': len(sources), 'profiles_parsed': parsed}
+
+def corroborate_provisioning(findings):
+    """Enterprise/sideload traces become HIGH when other checks also found something."""
+    others = sorted({f['check'] for f in findings if f['check'] != 'provisioning_profile' and f['score'] >= 30})
+    if not others: return
+    for f in findings:
+        if f['check'] == 'provisioning_profile':
+            f['score'] = max(f['score'], 65 if f.get('profile_type') == 'enterprise' else 60); f['severity'] = severity(f['score'])
+            f['reasons'].append('Seen together with other findings in this scan (' + ', '.join(others) + '), which makes it more serious.')
+
+# ---------- MVT escalation ----------
+
+def mvt_handoff(backup, findings):
+    top = max((f['score'] for f in findings), default=0)
+    q = lambda x: '"' + str(x) + '"'
+    steps = ['Install MVT (free, from Amnesty International): https://docs.mvt.re/', 'mvt-ios download-iocs']
+    if backup.kind == 'filesystem_dump':
+        steps.append(f'mvt-ios check-fs {q(backup.path)} --output /path/to/mvt-output/')
+    elif backup.encrypted and 'already decrypted' not in backup.decryption:
+        steps += [f'mvt-ios decrypt-backup -d /path/to/decrypted {q(backup.path)}   (MVT asks for the backup password if you leave out -p)',
+                  'mvt-ios check-backup --output /path/to/mvt-output/ /path/to/decrypted']
+    else:
+        steps.append(f'mvt-ios check-backup --output /path/to/mvt-output/ {q(backup.path)}')
+    steps.append('Review files ending in "_detected" in the output folder. Keep this report with the MVT output.')
+    why = ('Recommended now: this scan found a HIGH or CRITICAL signal.' if top >= 60 else
+           'Optional: nothing HIGH or CRITICAL was found, but MVT checks far more records and newer indicators if worry remains.')
+    return {'recommended': top >= 60, 'why': why,
+            'what_mvt_adds': 'MVT (Mobile Verification Toolkit) is Amnesty Tech\'s forensic tool. It extracts dozens of record types and matches them against public spyware and stalkerware indicators. It is best run by, or with, a trained examiner.',
+            'steps': steps, 'docs': MVT_DOCS}
+
 # ---------- report ----------
 
 def load_iocs():
@@ -312,21 +595,29 @@ def load_iocs():
     net = json.loads((ROOT / 'iocs/network.json').read_text(encoding='utf-8'))
     return jb, net
 
-def scan(backup, jb, net):
+def load_app_list():
+    return json.loads((ROOT / 'iocs/ios_dual_use_apps.json').read_text(encoding='utf-8'))
+
+def scan(backup, jb, net, dual=None):
+    dual = dual if dual is not None else load_app_list()
     findings, checks = [], {}
     for name, fn in (('jailbreak', lambda: check_jailbreak(backup, jb)), ('configuration_profiles', lambda: check_profiles(backup)),
-                     ('network_iocs', lambda: check_network(backup, net))):
+                     ('network_iocs', lambda: check_network(backup, net)), ('dual_use_apps', lambda: check_apps(backup, dual)),
+                     ('provisioning_profiles', lambda: check_provisioning(backup))):
         f, meta = fn(); findings += f; checks[name] = meta
+    corroborate_provisioning(findings)
+    apps = backup.app_details()
+    inventory = [dict(v, dual_use=bid in dual['apps']) for bid, v in sorted(apps.items())]
+    for a in inventory: a.pop('embedded_profile', None)
     return {'generated_at': dt.datetime.now(dt.timezone.utc).isoformat(), 'platform': 'ios', 'device': backup.device(),
-            'package_count': len(backup.apps()),
-            'backup': {'path': str(backup.path), 'encrypted': False, 'last_backup': str(backup.info.get('Last Backup Date', 'unknown')),
-                       'manifest_entries': len(backup.files),
-                       'note': 'Only data stored in this backup was examined. Nothing on the phone or in the backup was changed.'},
+            'package_count': len(apps), 'source_type': backup.kind, 'backup': backup.source_info(),
             'ioc_snapshots': {'jailbreak_paths_version': jb.get('version'), 'network_source': net.get('source'),
-                              'network_source_ref': net.get('source_ref'), 'network_retrieved': net.get('retrieved')},
+                              'network_source_ref': net.get('source_ref'), 'network_retrieved': net.get('retrieved'),
+                              'dual_use_apps_version': dual.get('version')},
             'checks': checks, 'safety_warning': SAFETY, 'clean_scan_caveat': CAVEAT,
             'account_hygiene': ACCOUNT_HYGIENE, 'limitations': LIMITATIONS,
-            'findings': sorted(findings, key=lambda x: (-x['score'], x['check'], x['indicator']))}
+            'findings': sorted(findings, key=lambda x: (-x['score'], x['check'], x['indicator'])),
+            'mvt_handoff': mvt_handoff(backup, findings), 'app_inventory': inventory}
 
 def _ev(e):
     if isinstance(e, dict): return ', '.join(f'{k}={v}' for k, v in e.items() if v not in (None, ''))
@@ -336,7 +627,9 @@ def plain(report):
     serious = [x for x in report['findings'] if x['score'] >= 30]
     d = report['device']
     lines = ['IOS STALKERWARE TRIAGE REPORT', '=' * 31, f"Generated: {report['generated_at']}",
-             f"Device: {d['model']} (iOS {d['ios']})", f"Backup: {report['backup']['path']} (last backup {report['backup']['last_backup']})",
+             f"Device: {d['model']} (iOS {d['ios']})",
+             (f"Backup: {report['backup']['path']} (last backup {report['backup']['last_backup']}; encryption: {report['backup']['decryption']})"
+              if report['backup']['type'] == 'backup' else f"Filesystem dump: {report['backup']['path']}"),
              f"Apps listed in backup: {report['package_count']}", '', report['safety_warning'], '', f'Priority findings: {len(serious)}', '']
     if not serious: lines += ['No medium/high-confidence findings were produced. This DOES NOT prove the phone is clean. New, renamed, or well-hidden tools can be missed.', '']
     for f in serious:
@@ -350,18 +643,32 @@ def plain(report):
         lines.append(f"  {name}: {meta['status']} (" + ', '.join(f'{k}={v}' for k, v in meta.items() if k != 'status') + ')')
     lines += ['', 'ACCOUNT HYGIENE - do these whatever this scan says, and only when it is safe:'] + [f'  {i}. {s}' for i, s in enumerate(report['account_hygiene'], 1)]
     lines += ['', 'CLEAN SCAN DOES NOT MEAN CLEAN', '  ' + report['clean_scan_caveat'], '', 'Limits of this scan:'] + [f'  - {s}' for s in report['limitations']]
-    lines += ['', 'Next steps: preserve this report and a copy of the backup folder somewhere the suspected monitor cannot access; photograph Settings > General > VPN & Device Management with a safer device; record date/time and who handled the phone; seek specialist help before removing anything. For deeper analysis, a qualified examiner can run Amnesty\'s Mobile Verification Toolkit (MVT) on the same backup.']
+    lines += ['', 'Next steps: preserve this report and a copy of the backup folder somewhere the suspected monitor cannot access; photograph Settings > General > VPN & Device Management with a safer device; record date/time and who handled the phone; seek specialist help before removing anything.']
+    m = report['mvt_handoff']
+    lines += ['', 'ESCALATE TO MVT FOR DEEP ANALYSIS', '  ' + m['why'], '  ' + m['what_mvt_adds']] + [f'  {i}. {s}' for i, s in enumerate(m['steps'], 1)]
+    lines += ['  Docs: ' + ', '.join(m['docs'])]
+    inv = report['app_inventory']
+    lines += ['', f'APP INVENTORY ({len(inv)} apps; * = on the dual-use list, see findings above)']
+    lines += [f"  {'*' if a['dual_use'] else ' '} {a['bundle_id']}" + (f" - {a['name']}" if a.get('name') else '') for a in inv] or ['  (no app list in this source)']
     return '\n'.join(lines) + '\n'
 
+def ask_password(env):
+    if os.environ.get(env): return os.environ[env]
+    return getpass.getpass('This backup is encrypted. Backup password (typing is hidden): ')
+
 def main():
-    ap = argparse.ArgumentParser(description='Read-only iPhone stalkerware triage over an unencrypted iTunes/Finder backup')
-    ap.add_argument('--backup', required=True, help='Path to one backup folder (the one containing Manifest.db), or its parent if it holds a single backup')
+    ap = argparse.ArgumentParser(description='Read-only iPhone stalkerware triage over an iTunes/Finder backup or a full filesystem dump')
+    src = ap.add_mutually_exclusive_group(required=True)
+    src.add_argument('--backup', help='Path to one backup folder (the one containing Manifest.db), or its parent if it holds a single backup')
+    src.add_argument('--fs-dump', help='Path to the root of an extracted full filesystem dump (the folder containing private/var)')
+    ap.add_argument('--password-env', default='IOS_BACKUP_PASSWORD', help='Environment variable holding the backup password (default: IOS_BACKUP_PASSWORD). If unset, you are asked for it.')
     ap.add_argument('--output', default='report_ios.txt'); ap.add_argument('--json-output', default='report_ios.json')
     a = ap.parse_args()
-    try: backup = Backup(a.backup)
+    try: source = FilesystemDump(a.fs_dump) if a.fs_dump else Backup(a.backup, password_prompt=lambda: ask_password(a.password_env))
     except BackupError as e: raise SystemExit(str(e))
-    jb, net = load_iocs()
-    report = scan(backup, jb, net)
+    with source:
+        jb, net = load_iocs()
+        report = scan(source, jb, net)
     Path(a.output).write_text(plain(report), encoding='utf-8'); Path(a.json_output).write_text(json.dumps(report, indent=2, default=str) + '\n', encoding='utf-8')
     print(f'Wrote {a.output} and {a.json_output}')
 if __name__ == '__main__': main()
