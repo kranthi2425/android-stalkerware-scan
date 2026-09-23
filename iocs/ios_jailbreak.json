@@ -1,0 +1,157 @@
+{
+  "version": "2026.09.23",
+  "description": "Jailbreak and permanent-sideloading artifacts for iOS backup triage. Compiled for this project from public jailbreak project pages, app metadata, and published jailbreak-detection references. Not derived from MVT code.",
+  "sources": [
+    "https://mas.owasp.org/MASTG/knowledge/ios/MASVS-RESILIENCE/MASTG-KNOW-0084/",
+    "https://github.com/roothider/JailbreakDetector/blob/5b3d0be4faa8df4b7da8d21ccfc5f28809e079e7/main.m",
+    "https://www.codenameone.com/blog/rootless-jailbreak-detection/",
+    "https://github.com/XLsn0w/Cydiapps/blob/master/Cydia_Build_cpp/Cydia.frappliance/Info.plist",
+    "https://github.com/waruhachi/Sileo/blob/main/Makefile",
+    "https://github.com/zbrateam/Zebra/commit/a6fc6bc129dce934281b056ff64008d52beb41f3",
+    "https://github.com/opa334/Dopamine/commit/9dc2267396ca8db3b3d9f88e6c525b8172ae9c0d",
+    "https://www.reddit.com/r/iOSthemes/comments/duufe8/question_what_is_the_bundle_id_for_the_checkra1n/",
+    "https://www.reddit.com/r/jailbreak/comments/e2h9zx/question_trying_to_resign_unc0ver_with/",
+    "https://www.reddit.com/r/iOSthemes/comments/bn762o/question_preference_bundle_for_coolstars_new_sylio/",
+    "https://git.bughz.com/bughz/TrollStore/src/commit/17ba8fbaa73b4de9888eeff10987eaa7090f68a4/TrollStore/Resources/Info.plist",
+    "https://github.com/opa334/TrollStore/commit/d11c04666a77435d1ac142af1b0b749214d60a9a"
+  ],
+  "bundle_ids": {
+    "com.saurik.Cydia": {
+      "name": "Cydia",
+      "kind": "package_manager"
+    },
+    "org.coolstar.SileoStore": {
+      "name": "Sileo",
+      "kind": "package_manager"
+    },
+    "org.coolstar.SileoNightly": {
+      "name": "Sileo Nightly",
+      "kind": "package_manager"
+    },
+    "xyz.willy.Zebra": {
+      "name": "Zebra",
+      "kind": "package_manager"
+    },
+    "science.xnu.undecimus": {
+      "name": "unc0ver",
+      "kind": "jailbreak"
+    },
+    "com.electrateam.chimera": {
+      "name": "Chimera",
+      "kind": "jailbreak"
+    },
+    "com.opa334.Dopamine": {
+      "name": "Dopamine",
+      "kind": "jailbreak"
+    },
+    "kjc.loader": {
+      "name": "checkra1n loader",
+      "kind": "jailbreak"
+    },
+    "com.opa334.TrollStore": {
+      "name": "TrollStore",
+      "kind": "permanent_sideloader"
+    },
+    "com.opa334.TrollStoreLite": {
+      "name": "TrollStore Lite",
+      "kind": "permanent_sideloader"
+    }
+  },
+  "paths": [
+    {
+      "path": "/var/jb",
+      "tool": "Rootless jailbreak",
+      "note": "Bootstrap prefix used by palera1n, Dopamine, XinaA15"
+    },
+    {
+      "path": "/private/preboot/jb",
+      "tool": "Rootless jailbreak",
+      "note": "Fugu15-style jailbreak root"
+    },
+    {
+      "path": "/var/containers/Bundle/xina",
+      "tool": "XinaA15",
+      "note": "XinaA15 jailbreak files"
+    },
+    {
+      "path": "/var/mobile/Library/Preferences/com.xina.blacklist.plist",
+      "tool": "XinaA15",
+      "note": "XinaA15 preferences"
+    },
+    {
+      "path": "/Applications/Cydia.app",
+      "tool": "Cydia",
+      "note": "Cydia app bundle"
+    },
+    {
+      "path": "/Applications/Sileo.app",
+      "tool": "Sileo",
+      "note": "Sileo app bundle"
+    },
+    {
+      "path": "/Applications/Zebra.app",
+      "tool": "Zebra",
+      "note": "Zebra app bundle"
+    },
+    {
+      "path": "/Applications/Installer.app",
+      "tool": "Installer",
+      "note": "Installer package manager"
+    },
+    {
+      "path": "/Applications/blackra1n.app",
+      "tool": "blackra1n",
+      "note": "blackra1n jailbreak"
+    },
+    {
+      "path": "/Library/MobileSubstrate/MobileSubstrate.dylib",
+      "tool": "Cydia Substrate",
+      "note": "Tweak injection library"
+    },
+    {
+      "path": "/Library/MobileSubstrate/DynamicLibraries",
+      "tool": "Cydia Substrate",
+      "note": "Tweak directory"
+    },
+    {
+      "path": "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist",
+      "tool": "Cydia",
+      "note": "Cydia startup daemon"
+    },
+    {
+      "path": "/usr/libexec/cydia",
+      "tool": "Cydia",
+      "note": "Cydia helper files"
+    },
+    {
+      "path": "/private/var/lib/apt",
+      "tool": "APT package database",
+      "note": "Jailbreak package manager state"
+    },
+    {
+      "path": "/private/var/lib/cydia",
+      "tool": "Cydia",
+      "note": "Cydia package state"
+    },
+    {
+      "path": "/private/var/stash",
+      "tool": "Legacy jailbreak stash",
+      "note": "Legacy jailbreak stash directory"
+    },
+    {
+      "path": "/private/var/tmp/cydia.log",
+      "tool": "Cydia",
+      "note": "Cydia log"
+    },
+    {
+      "path": "/private/var/mobile/Library/SBSettings/Themes",
+      "tool": "SBSettings",
+      "note": "SBSettings tweak themes"
+    },
+    {
+      "path": "/private/var/mobile/Library/Cydia",
+      "tool": "Cydia",
+      "note": "Cydia user data"
+    }
+  ]
+}
