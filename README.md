@@ -2,6 +2,8 @@
 
 A free, open-source, read-only Android triage tool for defenders, students, incident responders, and people checking a phone they are authorized to examine. It uses Android Debug Bridge (ADB), inventories user-visible package state, compares package names with a public stalkerware IOC list, and reports risky combinations of special access and permissions in plain language.
 
+An iPhone module, `ios_scanner.py`, does the same kind of plain-language triage on a local iTunes/Finder backup. See [iPhone (iOS) backup scan](#iphone-ios-backup-scan).
+
 > [!WARNING]
 > **Finding or removing monitoring software can alert an abuser and can increase danger.** Do not uninstall, disable, revoke permissions, reset the phone, or confront anyone until you have a safety plan. Use a safer device to contact a trusted advocate or local support service. Deleting an app may also delete evidence. See the [Coalition Against Stalkerware survivor guidance](https://stopstalkerware.org/information-for-survivors/).
 
@@ -105,7 +107,57 @@ For deeper forensic work, use [Amnesty International's Mobile Verification Toolk
 - MVT IOC documentation and public-index context: https://github.com/mvt-project/mvt/blob/main/docs/iocs.md
 - Amnesty International public investigations repository: https://github.com/AmnestyTech/investigations
 
-IOC lists age quickly. Review upstream changes before a high-stakes examination. Package-name matching is only one detection layer; certificate hashes and network indicators require APK extraction or network capture and are not checked in this first version.
+`iocs/network.json` is a pinned snapshot of Echap's `generated/network.csv` (CC-BY 4.0), recorded with the upstream commit it came from. Rebuild it after reviewing upstream changes:
+
+```bash
+python3 update_network_iocs.py --ref <upstream-commit-sha>
+```
+
+`iocs/ios_jailbreak.json` is versioned in this repo and lists its public sources.
+
+IOC lists age quickly. Review upstream changes before a high-stakes examination. Package-name matching is only one detection layer; certificate hashes require APK extraction and are not checked by the Android scanner. Network indicators are used by the iOS scanner against backup data.
+
+## iPhone (iOS) backup scan
+
+`ios_scanner.py` is a separate, laptop-based triage module for iPhones. iOS does not allow an on-phone scanner like the Android ADB path, so it reads a local iTunes/Finder backup instead. It uses only the Python 3.9+ standard library (`sqlite3`, `plistlib`), costs nothing, and never writes to the phone or the backup.
+
+> [!WARNING]
+> The same safety rule applies: **do not delete profiles or apps, reset the phone, or confront anyone before you have a safety plan.** Making a backup on a computer the suspected abuser can access may also be risky.
+
+### What it checks (Phase 1)
+
+1. **Jailbreak artifacts.** Classic iPhone stalkerware needs a jailbroken phone. The scanner matches the backup's `Manifest.db` file list and app list against `iocs/ios_jailbreak.json`, a versioned list of jailbreak apps, package managers, permanent sideloaders (TrollStore), and jailbreak file paths compiled for this project from public jailbreak project pages and published detection references. One tool is **HIGH**; traces of two or more separate tools are **CRITICAL**.
+2. **Configuration profiles and MDM enrollment.** Reads installed profile records, `MDM.plist`, and supervision/automated-enrollment records from the configuration-profiles container. Profiles with MDM, VPN, global proxy, root certificate, content-filter, or DNS payloads are **HIGH**; other profiles are **MEDIUM**. Work, school, and carrier profiles are common and legitimate, so the report says so.
+3. **Network IOC sweep.** Matches Echap's public stalkerware network indicators (domains, subdomains, IPv4 addresses, and URLs) against Safari history and SMS/iMessage text in the backup. A match is **CRITICAL**, with dates and direction so the user can tell an install link from their own research.
+
+Every iOS report also includes the Apple Safety Check / account-hygiene checklist and the "clean scan does not mean clean" caveat, because much iPhone spying (a known Apple Account password, shared accounts, Find My or family sharing, iCloud access) leaves no trace in a backup.
+
+### Make a backup
+
+1. Connect the iPhone to a Mac (Finder, macOS 10.15+) or a PC (Apple Devices app or iTunes) and choose **Back up all of the data on your iPhone to this computer** ([Apple: back up with the Finder](https://support.apple.com/en-us/108796)).
+2. Phase 1 reads **unencrypted** backups only. Apple backups are not encrypted by default, but if "Encrypt local backup" is on, the scanner will refuse the backup instead of guessing. Apple notes that unencrypted backups can leave out website history, call history, saved passwords, Wi-Fi settings, and Health data ([Apple: encrypted backups](https://support.apple.com/en-us/108353)), so browsing-history coverage may be missing. Encrypted-backup support is planned for Phase 2; until then an examiner can use MVT, which handles encrypted backups.
+3. Find the backup folder ([Apple: locate backups](https://support.apple.com/en-us/108809)):
+   - macOS: `~/Library/Application Support/MobileSync/Backup/`
+   - Windows: `%USERPROFILE%\Apple\MobileSync\Backup\` or `%APPDATA%\Apple Computer\MobileSync\Backup\`
+
+### Run it
+
+```bash
+python3 ios_scanner.py --backup "~/Library/Application Support/MobileSync/Backup/<DEVICE-ID>"
+```
+
+If the folder you pass holds exactly one backup, the scanner picks it. The tool writes:
+
+- `report_ios.txt` - plain-language triage report, safety warning first
+- `report_ios.json` - structured report with the same severity ladder and top-level shape as `report.json` (`generated_at`, `device`, `package_count`, `findings`, each finding with `score`, `severity`, `reasons`), plus `platform: "ios"`, `checks`, `account_hygiene`, and `clean_scan_caveat`
+
+The report lists which checks ran and how much data each saw, so "no findings" can be read against what was actually examined.
+
+### iOS limits
+
+- Standard backups do not contain the system partition, so most jailbreak files show up only as app data, preferences, or leftovers.
+- Network matching covers Safari history and message text in the backup only, not live traffic or third-party apps.
+- Planned for Phase 2: dual-use app inventory matching, enterprise/provisioning-profile traces, encrypted-backup support, and an MVT escalation handoff.
 
 ## Tests
 
@@ -113,7 +165,7 @@ IOC lists age quickly. Review upstream changes before a high-stakes examination.
 python3 -m unittest discover -s tests -v
 ```
 
-The test suite checks all pinned public IOC package names, a high-risk special-access combination, and a benign control.
+The test suite checks all pinned public IOC package names, a high-risk special-access combination, and a benign control. The iOS tests build synthetic backups and check every pinned network indicator, subdomain matching without false positives on shared hosts, jailbreak and profile/MDM detection, Safari and message IOC hits, encrypted-backup refusal, report structure, and that the backup is left unchanged.
 
 ## Ethical use
 
