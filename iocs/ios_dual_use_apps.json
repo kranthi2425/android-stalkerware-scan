@@ -1,0 +1,424 @@
+{
+  "version": "2026.09.23",
+  "description": "Curated App Store apps that can be used to watch a person: location sharing, parental control, couple trackers, anti-theft/remote-access, and apps marketed as phone monitoring. Most have legitimate uses. A match is a prompt to ask \"did I install this and do I know who can see it?\", never a verdict. Bundle IDs, names, and developers were read from Apple's public iTunes Lookup API on the retrieval date; categories and roles were assigned for this project from each app's own App Store description.",
+  "retrieved": "2026-09-23",
+  "sources": [
+    "https://itunes.apple.com/lookup (Apple iTunes Search/Lookup API; per-app URL in each entry)",
+    "https://nixdell.com/papers/spyware.pdf (Chatterjee et al., \"The Spyware Used in Intimate Partner Violence\", IEEE S&P 2018: most IPS-relevant apps are dual-use child-safety or anti-theft apps)",
+    "https://github.com/AssoEchap/stalkerware-indicators (echap_family: the same brand or its servers appear in the Echap network indicators pinned in iocs/network.json)"
+  ],
+  "categories": {
+    "location_sharing": "Family or friend location sharing. Shows where this phone is to the people in the group.",
+    "couple_tracker": "Relationship app that shares a partner's location or arrivals.",
+    "parental_control": "Parental control or child monitoring. Can show location, apps, browsing, or messages to the controlling account.",
+    "anti_theft_remote": "Anti-theft or remote-device app. Can locate the phone or use its camera/microphone remotely.",
+    "monitoring_marketed": "App Store app that markets itself as phone monitoring or tracking of another person."
+  },
+  "roles": {
+    "monitored_device": "Companion app meant for the phone being watched.",
+    "monitoring_device": "Controller app for the person doing the watching.",
+    "both": "Same app on both sides; everyone in the group can see each other.",
+    "unknown": "The same app can be either side."
+  },
+  "apps": {
+    "app.kids360.ios.parent": {
+      "name": "Parental Control App Kids360",
+      "developer": "MINDCARE LAB LTD",
+      "category": "parental_control",
+      "role": "monitoring_device",
+      "app_store_id": 1596059191,
+      "source": "https://itunes.apple.com/lookup?id=1596059191"
+    },
+    "by.tracktech.familyios": {
+      "name": "My Family: Find Friends Phone",
+      "developer": "Friendzy Limited",
+      "category": "location_sharing",
+      "role": "both",
+      "app_store_id": 1444403081,
+      "source": "https://itunes.apple.com/lookup?id=1444403081"
+    },
+    "co.amo.ios.location": {
+      "name": "Bump - real life is happening",
+      "developer": "amo",
+      "category": "location_sharing",
+      "role": "both",
+      "app_store_id": 6471519217,
+      "source": "https://itunes.apple.com/lookup?id=6471519217"
+    },
+    "com.carrotrocket.geozilla": {
+      "name": "GeoZilla Phone Location Finder",
+      "developer": "GZ TECH LTD",
+      "category": "location_sharing",
+      "role": "both",
+      "app_store_id": 981856216,
+      "source": "https://itunes.apple.com/lookup?id=981856216"
+    },
+    "com.chatwithparents.ios": {
+      "name": "Pingo by Findmykids",
+      "developer": "LETEM LTD",
+      "category": "location_sharing",
+      "role": "monitored_device",
+      "app_store_id": 1372841733,
+      "source": "https://itunes.apple.com/lookup?id=1372841733",
+      "echap_family": "FindMyKids"
+    },
+    "com.clevguard.kidsguardpro": {
+      "name": "KidsGuard Pro-Parental Control",
+      "developer": "CLEVERGUARD TECHNOLOGY CO., LIMITED",
+      "category": "parental_control",
+      "role": "unknown",
+      "app_store_id": 6449023572,
+      "source": "https://itunes.apple.com/lookup?id=6449023572",
+      "echap_family": "ClevGuard"
+    },
+    "com.contentwatch.ghoti.cp2.child": {
+      "name": "Net Nanny Child App",
+      "developer": "Zift Software LLC",
+      "category": "parental_control",
+      "role": "monitored_device",
+      "app_store_id": 1211447197,
+      "source": "https://itunes.apple.com/lookup?id=1211447197"
+    },
+    "com.contentwatch.ghoti.cp2.parent": {
+      "name": "Net Nanny Parental Control App",
+      "developer": "Zift Software LLC",
+      "category": "parental_control",
+      "role": "monitoring_device",
+      "app_store_id": 1211763414,
+      "source": "https://itunes.apple.com/lookup?id=1211763414"
+    },
+    "com.fortunex.limited.eyeZy": {
+      "name": "Findio - GPS Phone Tracker",
+      "developer": "FORTUNEX LIMITED",
+      "category": "location_sharing",
+      "role": "both",
+      "app_store_id": 1575693779,
+      "source": "https://itunes.apple.com/lookup?id=1575693779",
+      "echap_family": "mSpy"
+    },
+    "com.glympse.iphone.glympse": {
+      "name": "Glympse -Share your location",
+      "developer": "Glympse Inc.",
+      "category": "location_sharing",
+      "role": "both",
+      "app_store_id": 330316698,
+      "source": "https://itunes.apple.com/lookup?id=330316698"
+    },
+    "com.google.FamilyLink": {
+      "name": "Google Family Link",
+      "developer": "Google LLC",
+      "category": "parental_control",
+      "role": "monitoring_device",
+      "app_store_id": 1150085200,
+      "source": "https://itunes.apple.com/lookup?id=1150085200"
+    },
+    "com.isharing.iSharing-Lite": {
+      "name": "iSharing: GPS Location Tracker",
+      "developer": "ISHARINGSOFT, INC.",
+      "category": "location_sharing",
+      "role": "both",
+      "app_store_id": 416436167,
+      "source": "https://itunes.apple.com/lookup?id=416436167"
+    },
+    "com.kidslox.main": {
+      "name": "Parental Control App - Kidslox",
+      "developer": "Kidslox Trading Limited",
+      "category": "parental_control",
+      "role": "unknown",
+      "app_store_id": 914825567,
+      "source": "https://itunes.apple.com/lookup?id=914825567"
+    },
+    "com.life360.safetymap": {
+      "name": "Life360: Family Safety & GPS",
+      "developer": "Life360",
+      "category": "location_sharing",
+      "role": "both",
+      "app_store_id": 384830320,
+      "source": "https://itunes.apple.com/lookup?id=384830320"
+    },
+    "com.lovetracker.ios": {
+      "name": "LoveTracker – Location Sharing",
+      "developer": "龙庆 陈",
+      "category": "couple_tracker",
+      "role": "both",
+      "app_store_id": 6752990830,
+      "source": "https://itunes.apple.com/lookup?id=6752990830"
+    },
+    "com.lsdroid.Cerberus": {
+      "name": "Cerberus Phone Anti-theft",
+      "developer": "LSDroid S.R.L.",
+      "category": "anti_theft_remote",
+      "role": "monitoring_device",
+      "app_store_id": 6504459055,
+      "source": "https://itunes.apple.com/lookup?id=6504459055"
+    },
+    "com.microsoft.familysafetymobile": {
+      "name": "Microsoft Family Safety",
+      "developer": "Microsoft Corporation",
+      "category": "parental_control",
+      "role": "both",
+      "app_store_id": 1489209093,
+      "source": "https://itunes.apple.com/lookup?id=1489209093"
+    },
+    "com.mixerbox.tomodoko": {
+      "name": "MixerBox BFF: Location Tracker",
+      "developer": "MixerBox Inc.",
+      "category": "location_sharing",
+      "role": "both",
+      "app_store_id": 6443790994,
+      "source": "https://itunes.apple.com/lookup?id=6443790994"
+    },
+    "com.mmguardian.childapp.ios": {
+      "name": "MMGuardian App for Child Phone",
+      "developer": "Pervasive Group Inc.",
+      "category": "parental_control",
+      "role": "monitored_device",
+      "app_store_id": 951476346,
+      "source": "https://itunes.apple.com/lookup?id=951476346"
+    },
+    "com.mmguardian.parentapp.ios": {
+      "name": "MMGuardian Parental Control",
+      "developer": "Pervasive Group Inc.",
+      "category": "parental_control",
+      "role": "monitoring_device",
+      "app_store_id": 1226900784,
+      "source": "https://itunes.apple.com/lookup?id=1226900784"
+    },
+    "com.mobicip.cipnet": {
+      "name": "Parental Control App: Mobicip",
+      "developer": "Mobicip LLC",
+      "category": "parental_control",
+      "role": "unknown",
+      "app_store_id": 299153586,
+      "source": "https://itunes.apple.com/lookup?id=299153586"
+    },
+    "com.nationaledtech.boomerang": {
+      "name": "Boomerang Parental Control App",
+      "developer": "National Education Technologies Inc",
+      "category": "parental_control",
+      "role": "unknown",
+      "app_store_id": 1053543710,
+      "source": "https://itunes.apple.com/lookup?id=1053543710"
+    },
+    "com.parentsware.ourpact": {
+      "name": "Parental Control App - OurPact",
+      "developer": "Eturi Corp.",
+      "category": "parental_control",
+      "role": "monitoring_device",
+      "app_store_id": 954029412,
+      "source": "https://itunes.apple.com/lookup?id=954029412"
+    },
+    "com.parentsware.ourpact.childapp": {
+      "name": "OurPact Jr.",
+      "developer": "Eturi Corp.",
+      "category": "parental_control",
+      "role": "monitored_device",
+      "app_store_id": 1127917970,
+      "source": "https://itunes.apple.com/lookup?id=1127917970"
+    },
+    "com.prey": {
+      "name": "Prey: Tracking & Security",
+      "developer": "Prey, Inc.",
+      "category": "anti_theft_remote",
+      "role": "monitored_device",
+      "app_store_id": 456755037,
+      "source": "https://itunes.apple.com/lookup?id=456755037"
+    },
+    "com.qustodio.mdm.app.family.pro": {
+      "name": "Kids App Qustodio",
+      "developer": "Qustodio Technologies SL",
+      "category": "parental_control",
+      "role": "monitored_device",
+      "app_store_id": 990229433,
+      "source": "https://itunes.apple.com/lookup?id=990229433"
+    },
+    "com.qustodio.par.qustodio-family-parental-control-app": {
+      "name": "Qustodio Parental Control App",
+      "developer": "Qustodio Technologies SL",
+      "category": "parental_control",
+      "role": "monitoring_device",
+      "app_store_id": 1501720596,
+      "source": "https://itunes.apple.com/lookup?id=1501720596"
+    },
+    "com.saferkid.SaferKid": {
+      "name": "SaferKid Text Monitoring App",
+      "developer": "SaferKid, Inc.",
+      "category": "parental_control",
+      "role": "unknown",
+      "app_store_id": 1143802529,
+      "source": "https://itunes.apple.com/lookup?id=1143802529"
+    },
+    "com.sandstudio.cp-parent": {
+      "name": "Parental Control App: AirDroid",
+      "developer": "SAND STUDIO CORPORATION LIMITED",
+      "category": "parental_control",
+      "role": "monitoring_device",
+      "app_store_id": 1525339567,
+      "source": "https://itunes.apple.com/lookup?id=1525339567"
+    },
+    "com.screentime": {
+      "name": "Screen Time Parental Control",
+      "developer": "Screen Time Labs Ltd",
+      "category": "parental_control",
+      "role": "unknown",
+      "app_store_id": 1055315077,
+      "source": "https://itunes.apple.com/lookup?id=1055315077"
+    },
+    "com.securly.pnphub-ios": {
+      "name": "Securly Home",
+      "developer": "Securly, Inc.",
+      "category": "parental_control",
+      "role": "monitoring_device",
+      "app_store_id": 1349691905,
+      "source": "https://itunes.apple.com/lookup?id=1349691905"
+    },
+    "com.spyphone.PhoneTracker": {
+      "name": "Spy Phone ® Phone Tracker",
+      "developer": "Spy Phone Labs LLC",
+      "category": "monitoring_marketed",
+      "role": "unknown",
+      "app_store_id": 917089298,
+      "source": "https://itunes.apple.com/lookup?id=917089298"
+    },
+    "com.spyphone.pro": {
+      "name": "Spy Phone ® Pro Mobile Tracker",
+      "developer": "Spy Phone Labs LLC",
+      "category": "monitoring_marketed",
+      "role": "unknown",
+      "app_store_id": 1565756745,
+      "source": "https://itunes.apple.com/lookup?id=1565756745"
+    },
+    "com.spyx.app": {
+      "name": "SpyX: Phone Monitoring",
+      "developer": "UK GBYTE TECHNOLOGY CO., LIMITED",
+      "category": "monitoring_marketed",
+      "role": "unknown",
+      "app_store_id": 6754358571,
+      "source": "https://itunes.apple.com/lookup?id=6754358571",
+      "echap_family": "Msafely"
+    },
+    "com.symantec.nfchild": {
+      "name": "Norton Family Companion App",
+      "developer": "Gen Digital Inc.",
+      "category": "parental_control",
+      "role": "monitored_device",
+      "app_store_id": 1019061388,
+      "source": "https://itunes.apple.com/lookup?id=1019061388"
+    },
+    "com.symantec.nfparent": {
+      "name": "Norton Family Parental Control",
+      "developer": "Gen Digital Inc.",
+      "category": "parental_control",
+      "role": "monitoring_device",
+      "app_store_id": 1447157106,
+      "source": "https://itunes.apple.com/lookup?id=1447157106"
+    },
+    "com.TrackView": {
+      "name": "TrackView - Find My Phone",
+      "developer": "Cybrook Inc.",
+      "category": "anti_theft_remote",
+      "role": "both",
+      "app_store_id": 947187941,
+      "source": "https://itunes.apple.com/lookup?id=947187941"
+    },
+    "com.veraniz.lite": {
+      "name": "mLite: Find my Friends Phone",
+      "developer": "IPL GROUP PTY LTD",
+      "category": "location_sharing",
+      "role": "both",
+      "app_store_id": 1182397829,
+      "source": "https://itunes.apple.com/lookup?id=1182397829",
+      "echap_family": "mSpy"
+    },
+    "com.wheremychildren.ios": {
+      "name": "Findmykids: GPS Phone Tracker",
+      "developer": "LETEM LTD",
+      "category": "location_sharing",
+      "role": "monitoring_device",
+      "app_store_id": 994098803,
+      "source": "https://itunes.apple.com/lookup?id=994098803",
+      "echap_family": "FindMyKids"
+    },
+    "com.wondershare.parentalcontrol": {
+      "name": "FamiSafe: Parental Control App",
+      "developer": "Shenzhen Wondershare Software Co., Ltd",
+      "category": "parental_control",
+      "role": "monitoring_device",
+      "app_store_id": 1385417904,
+      "source": "https://itunes.apple.com/lookup?id=1385417904"
+    },
+    "com.wondershare.parentalcontrolkid": {
+      "name": "Fammy - Blocksite",
+      "developer": "Shenzhen Wondershare Software Co., Ltd",
+      "category": "parental_control",
+      "role": "monitored_device",
+      "app_store_id": 1559132457,
+      "source": "https://itunes.apple.com/lookup?id=1559132457"
+    },
+    "com.yanapps.phonetracker": {
+      "name": "XnSpy - GPS Location Tracker",
+      "developer": "YANAPPS LAB LLC",
+      "category": "location_sharing",
+      "role": "both",
+      "app_store_id": 6790172461,
+      "source": "https://itunes.apple.com/lookup?id=6790172461",
+      "echap_family": "XNSpy"
+    },
+    "io.familytime.dashboard": {
+      "name": "FamilyTime: Parental Control",
+      "developer": "AZIZOLIOUS LLC",
+      "category": "parental_control",
+      "role": "monitoring_device",
+      "app_store_id": 981066103,
+      "source": "https://itunes.apple.com/lookup?id=981066103"
+    },
+    "io.familytime.parentalcontrol": {
+      "name": "FamilyTime Jr.",
+      "developer": "AZIZOLIOUS LLC",
+      "category": "parental_control",
+      "role": "monitored_device",
+      "app_store_id": 1002010477,
+      "source": "https://itunes.apple.com/lookup?id=1002010477"
+    },
+    "ltd.love8.couples.relationship": {
+      "name": "Love8 - App for Couples",
+      "developer": "Chongqing Daole Er Technology Co., Ltd",
+      "category": "couple_tracker",
+      "role": "both",
+      "app_store_id": 6448163027,
+      "source": "https://itunes.apple.com/lookup?id=6448163027"
+    },
+    "Mg.FamilyLocator.PhoneTracker2": {
+      "name": "OneLocator: GPS family safety",
+      "developer": "Family Locator",
+      "category": "location_sharing",
+      "role": "both",
+      "app_store_id": 1470943827,
+      "source": "https://itunes.apple.com/lookup?id=1470943827"
+    },
+    "net.familo.release01": {
+      "name": "Familo: Find My Phone Tracker",
+      "developer": "SAFETIX LTD",
+      "category": "location_sharing",
+      "role": "both",
+      "app_store_id": 638696816,
+      "source": "https://itunes.apple.com/lookup?id=638696816"
+    },
+    "us.bark.Bark-iOS-Child2": {
+      "name": "Bark Kids",
+      "developer": "Bark Technologies Inc",
+      "category": "parental_control",
+      "role": "monitored_device",
+      "app_store_id": 1500629600,
+      "source": "https://itunes.apple.com/lookup?id=1500629600"
+    },
+    "us.bark.barkconnectiosapp": {
+      "name": "Bark - Parental Controls",
+      "developer": "Bark Technologies Inc",
+      "category": "parental_control",
+      "role": "monitoring_device",
+      "app_store_id": 1477619146,
+      "source": "https://itunes.apple.com/lookup?id=1477619146"
+    }
+  }
+}
